@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:regular,italic,500,500italic,700,700italic);
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'DM Sans', sans-serif;
+}
+.container {
+    max-width: 1040px;
+    margin: 0 auto;
+    
+}
+.header {
+    background: rgba(255, 113, 67, 0.27);
+    padding: 38px 0 47px;
+    margin-bottom: 104px;
+}
+section.container {
+    margin-bottom: 84px;
+}
+.container {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.nav-li {
+    display: inline-block;
+}
+.nav-li:not(:first-of-type) {
+    margin-left: 49px;
+}
+.nav-link {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.468947px;
+    color: #696871;
+    text-decoration: none;
+    cursor: pointer;
+}
+.nav-link:hover {
+    color: black;
+    transition: 300ms;
+}
+.button {
+    width: 212px;
+    height: 60px;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -0.531474px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+}
+.header-button {
+    background: #FF7143;
+}
+.header-button:hover {
+    background: rgb(255, 113, 67, .8);
+    transition: 500ms;
+}
+.about .content-text {
+    max-width: 467px;
+}
+.about .title {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 77px;
+    letter-spacing: -2.50105px;
+    color: #19191B;
+    margin-bottom: 30px;
+}
+.about .text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.625263px;
+    color: #696871;
+    margin-bottom: 50px;
+}
+.button-main{
+    background: #5454D4;
+}
+.button-main:hover{
+    background: rgba(84, 84, 212, .8);
+    transition: 500ms;
+}
+.button-transparent{
+    background: none;
+    border: 1px solid #5454D4;
+    color: #5454D4;
+    margin-left: 35px;
+}
+.button-transparent:hover {
+    background: rgba(84, 84, 212, .8);
+    color: #fff;
+    transition: 500ms;
+}
+.footer {
+    padding: 53px 0;
+    background: rgba(255, 113, 67, 0.27);
+    
+}
