@@ -120,6 +120,7 @@ section.container {
     border: 1px solid #7087FF;
     box-sizing: border-box;
     margin-right: 39px;
+    outline: none;
 }
 .subscribe .input::placeholder,
 .subscribe .input {
@@ -131,8 +132,6 @@ section.container {
 }
 section.plan {
     margin-bottom: 132px;
-    /* flex-direction: column;
-    align-items: flex-start; */
 }
 .plan .title {
     font-weight: 700;
