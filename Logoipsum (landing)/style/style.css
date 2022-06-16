@@ -120,7 +120,6 @@ section.container {
     border: 1px solid #7087FF;
     box-sizing: border-box;
     margin-right: 39px;
-    outline: none;
 }
 .subscribe .input::placeholder,
 .subscribe .input {
@@ -129,6 +128,7 @@ section.container {
     line-height: 22px;
     letter-spacing: -0.531474px;
     color: #000000;
+    outline: none;
 }
 section.plan {
     margin-bottom: 132px;
