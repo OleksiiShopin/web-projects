@@ -30,7 +30,7 @@ body {
     justify-content: space-between;
     margin: 29px 0 134px;
 }
-.logo {
+.logo, .footer-logo-box img {
     align-items: center;
     width: 116px;
     height: 26px;
