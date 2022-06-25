@@ -33,7 +33,7 @@
         <p class="header-text">You do not have the right to remain silent… let us know what it takes to challenge you</p>
         <form class="search">
             <div class="search-param">
-                <div class="search-block">
+                <div class="search-block destination-block">
                     <ion-icon name="search-outline"></ion-icon>
                     <input 
                         type="text" 
@@ -44,14 +44,74 @@
                     >
                     <span class="placeholder">Search destination</span>
                 </div>
-                <div class="search-block">
+                <div class="search-block location-block">
                     <ion-icon name="location-outline"></ion-icon>
                     <input type="text" name="Location" class="search-location" required="required">
                     <span class="placeholder">C. Location</span>
                 </div>
-                <div class="search-block">
-                    <button class="btn-search-param"><span>1</span> Person</button>
-                    <ion-icon name="caret-down-outline"></ion-icon>
+                <div class="search-block people-block">
+                    <input type="hidden" name="adults" class="adults_field" value="1">
+                    <input type="hidden" name="youths" class="youth_field" value="0">
+                    <input type="hidden" name="children" class="childrens_field" value="0">
+                    <input type="hidden" name="infants" class="infants_field" value="0">
+                    <input type="button" id="mPerson" value="-">
+                    <div class="btn-people btn-search-param" id="btnPerson">
+                        <p><span class="total">1</span> Person</p>
+                        <ion-icon name="caret-down-outline"></ion-icon>
+                    </div>
+                    <div class="people">
+                        <ul>
+                            <li class="people-type-bar">
+                                <p class="people-type-name">Adult(s) <span>16 +</span></p>
+                                <p class="people-pls-min">
+                                    <a class="btn-min">
+                                        <ion-icon name="remove-circle" class="btn-pls-min"></ion-icon>
+                                    </a>
+                                    <span class="adults">1</span>
+                                    <a class="btn-pls">
+                                        <ion-icon name="add-circle" class="btn-pls-min"></ion-icon>
+                                    </a>
+                                </p>
+                            </li>
+                            <li class="people-type-bar">
+                                <p class="people-type-name">Youth <span>12 - 15</span></p>
+                                <div class="people-pls-min">
+                                    <a class="btn-min">
+                                        <ion-icon name="remove-circle" class="btn-pls-min"></ion-icon>
+                                    </a>
+                                    <span class="youths">0</span>
+                                    <a class="btn-pls">
+                                        <ion-icon name="add-circle" class="btn-pls-min"></ion-icon>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="people-type-bar">
+                                <p class="people-type-name">Children <span>02 - 11</span></p>
+                                <p class="people-pls-min">
+                                    <a class="btn-min">
+                                        <ion-icon name="remove-circle" class="btn-pls-min"></ion-icon>
+                                    </a>
+                                    <span class="children">0</span>
+                                    <a class="btn-pls">
+                                        <ion-icon name="add-circle" class="btn-pls-min"></ion-icon>
+                                    </a>
+                                </p>
+                            </li>
+                            <li class="people-type-bar">
+                                <p class="people-type-name">Infant(s) <span>under 2</span></p>
+                                <p class="people-pls-min">
+                                    <a class="btn-min">
+                                        <ion-icon name="remove-circle" class="btn-pls-min"></ion-icon>
+                                    </a>
+                                    <span class="infants">0</span>
+                                    <a class="btn-pls">
+                                        <ion-icon name="add-circle" class="btn-pls-min"></ion-icon>
+                                    </a>
+                                </p>
+                            </li>
+                        </ul>
+
+                    </div>
                 </div>
             </div>
             <input type="submit" value="Search" class="btn search-btn">
@@ -95,35 +155,37 @@
             <h2 class="origin-left-title about-title">Explore all corners of the world with us.</h2>
             <p class="origin-left-text about-text">These exercises ran in parallel with a series of focus groups comprising of parents. These exercises ran in parallel with a series of focus groups comprising of parents.</p>
         </div>
-
-        <div class="about-destination-box">
-            <div class="about-destination-card active-desc">
-                <div class="gradient"></div>
-                <img src="img/nanjin.png" alt="Nanjing boat on the lake">
-                <div class="destination-desc">
-                    <h3 class="desc-title">Nanjing, China</h3>
-                    <p class="desc-text">These exercises ran in parallel with a series of focus groups comprising of parents. These exercises ran in parallel with a series.</p>
+        <div class="about-destination-container">
+            <div class="about-destination-box">
+                <div class="about-destination-card active-desc">
+                    <div class="gradient"></div>
+                    <img src="img/nanjin.png" alt="Nanjing boat on the lake">
+                    <div class="destination-desc">
+                        <h3 class="desc-title">Nanjing, China</h3>
+                        <p class="desc-text">These exercises ran in parallel with a series of focus groups comprising of parents. These exercises ran in parallel with a series.</p>
+                    </div>
+                </div>
+                <div class="about-destination-card">
+                    <div class="gradient"></div>
+                    <img src="img/bridge.png" alt="India bridge">
+                    <div class="destination-desc">
+                        <h3 class="desc-title">Highway, India</h3>
+                        <p class="desc-text">These exercises ran in parallel with a series of focus groups comprising of parents. These exercises ran in parallel with a series.</p>
+                    </div>
+                </div>
+                <div class="about-destination-card">
+                    <div class="gradient"></div>
+                    <img src="img/burano.png" alt="Burano - an island in the Venetian Lagoon">
+                    <div class="destination-desc">
+                        <h3 class="desc-title">Burano, Italy</h3>
+                        <p class="desc-text">These exercises ran in parallel with a series of focus groups comprising of parents. These exercises ran in parallel with a series.</p>
+                    </div>
                 </div>
             </div>
-            <div class="about-destination-card">
-                <div class="gradient"></div>
-                <img src="img/bridge.png" alt="India bridge">
-                <div class="destination-desc">
-                    <h3 class="desc-title">Highway, India</h3>
-                    <p class="desc-text">These exercises ran in parallel with a series of focus groups comprising of parents. These exercises ran in parallel with a series.</p>
-                </div>
+            <div class="about-buttons">
+                <div id="about-left" class="switch-btn btn-l"></div>
+                <div id="about-right" class="switch-btn btn-r"></div>
             </div>
-            <div class="about-destination-card">
-                <div class="gradient"></div>
-                <img src="img/burano.png" alt="Burano - an island in the Venetian Lagoon">
-                <div class="destination-desc">
-                    <h3 class="desc-title">Burano, Italy</h3>
-                    <p class="desc-text">These exercises ran in parallel with a series of focus groups comprising of parents. These exercises ran in parallel with a series.</p>
-                </div>
-            </div>
-
-            <div id="about-left" class="switch-btn btn-l"></div>
-            <div id="about-right" class="switch-btn btn-r"></div>
         </div>
     </section>
 
@@ -225,18 +287,127 @@
                     </div>
                     <img src="img/cityBarcelona.png" alt="Barcelona">
                 </div>
+                <div class="cities-card">
+                    <div class="city">Dubai</div>
+                    <div class="city-desc">
+                        <h3>United Arab Emirates</h3>
+                        <p>10 Popular Places</p>
+                    </div>
+                    <img src="img/cityDubai.png" alt="Dubai">
+                </div>
+                <div class="cities-card">
+                    <div class="city">Bali</div>
+                    <div class="city-desc">
+                        <h3>Indonesia</h3>
+                        <p>10 Popular Places</p>
+                    </div>
+                    <img src="img/cityBali.png" alt="Bali">
+                </div>
+                <div class="cities-card">
+                    <div class="city">Barcelona</div>
+                    <div class="city-desc">
+                        <h3>Spain</h3>
+                        <p>10 Popular Places</p>
+                    </div>
+                    <img src="img/cityBarcelona.png" alt="Barcelona">
+                </div>
             </div>
         </div>
     </section>
     <section class="testimonials container">
         <div id="testimonials" class="section-topic">Testimonials</div>
-        <div class="testimonials-title-box container">
+        <div class="testimonials-title-box">
             <h2 class="origin-left-title">What our client say</h2>
             <p class="origin-left-text">Create a visual identity for your company, and an overall brand</p>
             <div id="testimonials-left" class="switch-btn btn-l"></div>
             <div id="testimonials-right" class="switch-btn btn-r"></div>
         </div>
         <div class="testimonials-card-box">
+            <div class="testimonials-card">
+                <div class="testimonials-card-header">
+                    <div class="photo">
+                        <img src="img/person 1.png" alt="Person">
+                    </div>
+                    <div class="testimonials-card-title-box">
+                        <h3>Sayem Ahmed</h3>
+                        <p>Product designer</p>
+                    </div>
+                </div>
+                <div class="testimonials-card-desc">
+                    <div class="stars">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                    </div>
+                    <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                </div>
+            </div>
+            <div class="testimonials-card">
+                <div class="testimonials-card-header">
+                    <div class="photo">
+                        <img src="img/person 2.png" alt="Person">
+                    </div>
+                    <div class="testimonials-card-title-box">
+                        <h3>John Smith</h3>
+                        <p>Product designer</p>
+                    </div>
+                </div>
+                <div class="testimonials-card-desc">
+                    <div class="stars">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                    </div>
+                    <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                </div>
+            </div>
+            <div class="testimonials-card">
+                <div class="testimonials-card-header">
+                    <div class="photo">
+                        <img src="img/person 3.png" alt="Person">
+                    </div>
+                    <div class="testimonials-card-title-box">
+                        <h3>Rowhan Doe</h3>
+                        <p>Product designer</p>
+                    </div>
+                </div>
+                <div class="testimonials-card-desc">
+                    <div class="stars">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                    </div>
+                    <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                </div>
+            </div>
+            <div class="testimonials-card">
+                <div class="testimonials-card-header">
+                    <div class="photo">
+                        <img src="img/person 1.png" alt="Person">
+                    </div>
+                    <div class="testimonials-card-title-box">
+                        <h3>Adnan Roe</h3>
+                        <p>Product designer</p>
+                    </div>
+                </div>
+                <div class="testimonials-card-desc">
+                    <div class="stars">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/star.svg" alt="Star">
+                        <img src="img/starNoFill.svg" alt="Star">
+                    </div>
+                    <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                </div>
+            </div>
+
             <div class="testimonials-card">
                 <div class="testimonials-card-header">
                     <div class="photo">
@@ -381,4 +552,5 @@
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="js/index.js"></script>
 </html>
