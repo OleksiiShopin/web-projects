@@ -89,7 +89,7 @@ function moveAboutCardLeft () {
                 oldActive.nextElementSibling.classList.add('active-desc');
                 countControl = 0;
             },
-            2000);
+            1000);
         }
     }
 }
@@ -106,7 +106,7 @@ function moveAboutCardRight () {
                 oldActive.previousElementSibling.classList.add('active-desc');
                 countControl = 0;
             },
-            2000);
+            1000);
         }
     }
 }
