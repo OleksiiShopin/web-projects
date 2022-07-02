@@ -7,6 +7,8 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #F5F6F8;
     overflow-x: hidden;
+    width: 100vw;
+    box-sizing: border-box;
 }
 .container {
     max-width: 1170px;
@@ -23,6 +25,7 @@ body {
     background-size: cover;
     text-align: center;
     margin-bottom: 140px;
+    padding: 0 auto;
 }
 .header {
     display: flex;
@@ -221,13 +224,6 @@ body {
     z-index: 11;
     cursor: pointer;
 }
-/* #mPerson:focus-within {
-    z-index: -1;
-} */
-/* #mPerson:focus-within ~ .btn-people ion-icon{
-    transform: rotate(180deg);
-    transition: 0.5s;
-} */
 #mPerson.focus-person ~ .btn-people ion-icon {
     transform: rotate(180deg);
     transition: 0.5s;
@@ -297,6 +293,7 @@ body {
     width: 20px;
     height: 20px;
     font-size: 20px;
+    cursor: pointer;
 }
 .people-type-name span  {
     font-size: 0.8em;
@@ -358,6 +355,7 @@ body {
 .best .advantages {
     display: flex;
     margin-bottom: 100px;
+    gap: 40px;
 }
 .best .advantages .card {
     width: 326px;
@@ -371,9 +369,6 @@ body {
     transform: translateY(-10px);
     box-shadow: 0px 54px 80px -16px rgba(219, 222, 230, 0.8);
     transition: 0.5s;
-}
-.best .advantages .card:not(:last-child) {
-    margin-right: 40px;
 }
 .best .advantages .card .icon {
     display: flex;
@@ -545,6 +540,7 @@ body {
     background-image: url(../img/arrow.svg);
     background-repeat: no-repeat;
     background-position: center center;
+    cursor: pointer;
 }
 .btn-r {
     transform: rotate(180deg);
@@ -571,6 +567,10 @@ body {
 .features-box {
     display: flex;
     margin-bottom: 94px;
+    gap: 35px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .features-card {
     position: relative;
@@ -580,9 +580,6 @@ body {
     border-radius: 12px;
     padding: 16px 17px 0 15px;
     transition: 0.5s;
-}
-.features-card:not(:last-child) {
-    margin-right: 35px;
 }
 .features-card:hover,
 .testimonials-card:hover {
@@ -757,7 +754,6 @@ body {
     display: flex;
     /* width: 1305px; */
     width: 2645px;
-    justify-content: space-between;
     gap: 35px;
     transform: translateX(0);
     transition: 1s;
@@ -884,7 +880,8 @@ body {
 .subs-form .form-email {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    width: 250px;
+    width: 320px;
+    max-width: 320px;
     font-size: 16px;
     line-height: 24px;
     color:#292929;
@@ -908,6 +905,7 @@ body {
     color: #FFFFFF;
     border: none;
     transition: 0.5s;
+    cursor: pointer;
 }
 .subs-form .form-submit:hover {
     background: #34A5E4;
@@ -1050,4 +1048,75 @@ body {
 }
 .social-medial-cell:hover .media-text {
     color: #292929;
+}
+
+@media only screen 
+and (min-width: 1200px)
+and (max-width: 1235px){
+    body {
+        overflow-x: hidden;
+    }
+    .container {
+        max-width: 1120px;
+    }
+    .features-box {
+        gap: 20px;
+    }
+}
+@media screen 
+and (min-width: 992px)
+and (max-width: 1199px) {
+    .container {
+        max-width: 950px;
+    }
+    .best .advantages {
+        gap: 20px;
+    }
+    .best .advantages .card {
+        width: 306px;
+    }
+    .about-title-box .about-title {
+        margin-right: 120px;
+    }
+    .about-title-box .about-text {
+        max-width: 413px;
+    }
+    .testimonials-card-box {
+        gap: 20px;
+        width: 2540px;
+    }
+    .travel-subscription {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 42px 90px;
+    }
+    .travel-subscription-offer {
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: 100%;
+        width: 100%;
+    }
+    .travel-subscription-offer .subs-text {
+        max-width: 280px;
+    }
+    .subs-form {
+        width: 100%;;
+    }
+    .form-submit {
+        width: 200px;
+    }
+
+}
+/* @media screen 
+and (min-width: 768px)
+and (max-width: 991px) {
+    .container{
+
+    }
+} */
+@media (max-width: 400px) {
+    body {
+       overflow-x: hidden; 
+    }
 }

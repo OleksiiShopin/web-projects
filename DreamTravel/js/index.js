@@ -123,7 +123,13 @@ let cityMovedCounter = 0;
 function moveCitiesCardLeft () {
     const citiesCardsBox = document.querySelector('.cities-card-box');
     const numberOfChild = citiesCardsBox.childElementCount;
-    if(numberOfChild - 3 > cityMovedCounter){
+    let numberVisibleCard = 3;
+    if (citiesCardsBox.offsetParent.offsetWidth >= 992 && citiesCardsBox.offsetParent.offsetWidth < 1200){
+        numberVisibleCard = 2;
+    } else {
+        numberVisibleCard = 3;
+    }
+    if(numberOfChild - numberVisibleCard > cityMovedCounter){
         cityMovedCounter++;
         citiesCardsBox.style.transform = `translateX(${-399 * cityMovedCounter}px)`;
     }
@@ -144,7 +150,12 @@ const testimonialsBtn_r = document.getElementById('testimonials-right');
 let testimonialsMoveCounter = 0;
 function moveTestimonialsCardLeft () {
     const testiomonalsCardBox = document.querySelector('.testimonials-card-box');
-    const moveWholeCard = 335;
+    let moveWholeCard = 335;
+    if (testiomonalsCardBox.offsetParent.offsetWidth >= 992 && testiomonalsCardBox.offsetParent.offsetWidth < 1200){
+        moveWholeCard = 320;
+    } else {
+        moveWholeCard = 335;
+    }
     const viisibleWidth = testiomonalsCardBox.offsetWidth - testiomonalsCardBox.parentElement.offsetWidth;
     const numberOfScroll = Math.trunc((viisibleWidth) / moveWholeCard);
     const restWidth = (testiomonalsCardBox.offsetWidth - moveWholeCard * numberOfScroll) % testiomonalsCardBox.parentElement.offsetWidth;
@@ -162,7 +173,12 @@ function moveTestimonialsCardLeft () {
 }
 function moveTestimonialsCardRight () {
     const testiomonalsCardBox = document.querySelector('.testimonials-card-box');
-    const moveWholeCard = 335;
+    let moveWholeCard = 335;
+    if (testiomonalsCardBox.offsetParent.offsetWidth >= 992 && testiomonalsCardBox.offsetParent.offsetWidth < 1200){
+        moveWholeCard = 320;
+    } else {
+        moveWholeCard = 335;
+    }
     const viisibleWidth = testiomonalsCardBox.offsetWidth - testiomonalsCardBox.parentElement.offsetWidth;
     const numberOfScroll = Math.trunc((viisibleWidth) / moveWholeCard);
     const restWidth = (testiomonalsCardBox.offsetWidth - moveWholeCard * numberOfScroll) % testiomonalsCardBox.parentElement.offsetWidth;
