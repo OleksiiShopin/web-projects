@@ -10,11 +10,6 @@ paramButton.addEventListener('click', (evntBtn) => {
         evntBtn.target.classList.add('focus-person');
     }
 })
-// const personTable = document.querySelector('.people');
-// const person = document.getElementById('mPerson');
-// person.addEventListener('focusin', focusinPerson);
-// person.addEventListener('focusout', focusoutPerson);
-
 // calculation of the number of people and the functionality of the buttons + and -
 const total = document.querySelector('.total');
 let countTotal = total.textContent;
@@ -55,36 +50,19 @@ plusBtn.forEach((item) =>
 // active button in about block
 const aboutBtn_l = document.getElementById('about-left');
 const aboutBtn_r = document.getElementById('about-right');
-//first variant replace
-// function moveAboutCardLeft () {
-//     // const aboutCards = document.getElementsByClassName('about-destination-card');
-//     const aboutCardsBox = document.querySelector('.about-destination-box');
-//     // console.log(aboutCardsBox.firstElementChild);
-//     const removeCard = aboutCardsBox.removeChild(aboutCardsBox.firstElementChild);
-//     removeCard.classList.remove('active-desc');
-//     aboutCardsBox.firstElementChild.classList.add('active-desc');
-//     aboutCardsBox.appendChild(removeCard);
-// }
-// function moveAboutCardRight () {
-//     const aboutCardsBox = document.querySelector('.about-destination-box');
-//     const removeCard = aboutCardsBox.removeChild(aboutCardsBox.lastElementChild);
-//     aboutCardsBox.firstElementChild.classList.remove('active-desc');
-//     removeCard.classList.add('active-desc');
-//     aboutCardsBox.insertBefore(removeCard, aboutCardsBox.firstElementChild);
-// }
 
-//second variant replace
 let countOfscroll = 0;
 let countControl = 0;
 function moveAboutCardLeft () {
     if (countControl === 0){
         const aboutCardsBox = document.querySelector('.about-destination-box');
+        let widthAboutCard = aboutCardsBox.firstElementChild.offsetWidth + 35;
         if (!aboutCardsBox.lastElementChild.classList.contains('active-desc')){
             countControl++;
             countOfscroll++;
             const oldActive = document.querySelector('.active-desc');
             oldActive.classList.remove('active-desc');
-            aboutCardsBox.style.transform = `translateX(${-575*countOfscroll}px)`;
+            aboutCardsBox.style.transform = `translateX(${-widthAboutCard * countOfscroll}px)`;
             window.setTimeout(()=> {
                 oldActive.nextElementSibling.classList.add('active-desc');
                 countControl = 0;
@@ -96,12 +74,13 @@ function moveAboutCardLeft () {
 function moveAboutCardRight () {
     if (countControl === 0){
         const aboutCardsBox = document.querySelector('.about-destination-box');
+        let widthAboutCard = aboutCardsBox.firstElementChild.offsetWidth + 35;
         if (!aboutCardsBox.firstElementChild.classList.contains('active-desc')){
             countControl++;
             countOfscroll--;
             const oldActive = document.querySelector('.active-desc');
             oldActive.classList.remove('active-desc');
-            aboutCardsBox.style.transform = `translateX(${-575*countOfscroll}px)`;
+            aboutCardsBox.style.transform = `translateX(${-widthAboutCard * countOfscroll}px)`;
             window.setTimeout(()=> {
                 oldActive.previousElementSibling.classList.add('active-desc');
                 countControl = 0;
@@ -124,7 +103,9 @@ function moveCitiesCardLeft () {
     const citiesCardsBox = document.querySelector('.cities-card-box');
     const numberOfChild = citiesCardsBox.childElementCount;
     let numberVisibleCard = 3;
-    if (citiesCardsBox.offsetParent.offsetWidth >= 992 && citiesCardsBox.offsetParent.offsetWidth < 1200){
+    if (citiesCardsBox.offsetParent.offsetWidth < 992) {
+        numberVisibleCard = 1;
+    } else if (citiesCardsBox.offsetParent.offsetWidth >= 992 && citiesCardsBox.offsetParent.offsetWidth < 1200){
         numberVisibleCard = 2;
     } else {
         numberVisibleCard = 3;
@@ -196,3 +177,40 @@ function moveTestimonialsCardRight () {
 }
 testimonialsBtn_l.addEventListener('click', moveTestimonialsCardLeft);
 testimonialsBtn_r.addEventListener('click', moveTestimonialsCardRight);
+
+const burgerMenu = document.querySelector('.burger-menu');
+function activeBurger () {
+    const wSize = window.innerWidth;
+    const burgerNav = document.querySelector('.burger-nav');
+    const headBtn = document.querySelector('.head-btn');
+    burgerMenu.classList.toggle('active-burger');
+    if(window.innerWidth < 600){
+        headBtn.classList.toggle('active-burger');
+    }
+    if (burgerMenu.classList.contains('active-burger')){
+        burgerNav.style.width = wSize / 2 + "px";
+    } else {
+        burgerNav.style.width = 0;
+    }
+}
+burgerMenu.addEventListener('click', activeBurger);
+let replaceNavIndex = -1;
+function changePosMenuForResponsive () {
+    console.log(window.innerWidth);
+    const navigation = document.getElementById('header-nav');
+    const burgerNav = document.querySelector('.burger-nav');
+    const header = document.querySelector('.header');
+    const posForNav = document.querySelector('.header-right');
+    if(window.innerWidth < 992 && replaceNavIndex === -1){
+        const removeObj = header.removeChild(navigation);
+        burgerNav.appendChild(removeObj);
+        replaceNavIndex = 1;
+    } else if (window.innerWidth >= 992 && replaceNavIndex === 1) {
+        const removeObj = burgerNav.removeChild(navigation);
+        header.insertBefore(removeObj, posForNav);
+        replaceNavIndex = -1;
+    }
+}
+changePosMenuForResponsive();
+window.addEventListener("resize", changePosMenuForResponsive);
+
