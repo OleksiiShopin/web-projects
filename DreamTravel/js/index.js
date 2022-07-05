@@ -137,9 +137,9 @@ function moveTestimonialsCardLeft () {
     } else {
         moveWholeCard = 335;
     }
-    const viisibleWidth = testiomonalsCardBox.offsetWidth - testiomonalsCardBox.parentElement.offsetWidth;
+    const viisibleWidth = testiomonalsCardBox.offsetWidth - testiomonalsCardBox.parentElement.previousElementSibling.offsetWidth;
     const numberOfScroll = Math.trunc((viisibleWidth) / moveWholeCard);
-    const restWidth = (testiomonalsCardBox.offsetWidth - moveWholeCard * numberOfScroll) % testiomonalsCardBox.parentElement.offsetWidth;
+    const restWidth = (testiomonalsCardBox.offsetWidth - moveWholeCard * numberOfScroll) % testiomonalsCardBox.parentElement.previousElementSibling.offsetWidth;
     if (numberOfScroll === 0 && testimonialsMoveCounter === 0){
         testiomonalsCardBox.style.transform = `translateX(${- restWidth}px)`; 
         testimonialsMoveCounter++;
@@ -160,9 +160,9 @@ function moveTestimonialsCardRight () {
     } else {
         moveWholeCard = 335;
     }
-    const viisibleWidth = testiomonalsCardBox.offsetWidth - testiomonalsCardBox.parentElement.offsetWidth;
+    const viisibleWidth = testiomonalsCardBox.offsetWidth - testiomonalsCardBox.parentElement.previousElementSibling.offsetWidth;
     const numberOfScroll = Math.trunc((viisibleWidth) / moveWholeCard);
-    const restWidth = (testiomonalsCardBox.offsetWidth - moveWholeCard * numberOfScroll) % testiomonalsCardBox.parentElement.offsetWidth;
+    const restWidth = (testiomonalsCardBox.offsetWidth - moveWholeCard * numberOfScroll) % testiomonalsCardBox.parentElement.previousElementSibling.offsetWidth;
     if (numberOfScroll === 0 && testimonialsMoveCounter > 0){
         testiomonalsCardBox.style.transform = `translateX(0)`;
         testimonialsMoveCounter--;
@@ -178,6 +178,7 @@ function moveTestimonialsCardRight () {
 testimonialsBtn_l.addEventListener('click', moveTestimonialsCardLeft);
 testimonialsBtn_r.addEventListener('click', moveTestimonialsCardRight);
 
+//burger menu activation 
 const burgerMenu = document.querySelector('.burger-menu');
 function activeBurger () {
     const wSize = window.innerWidth;
@@ -189,14 +190,17 @@ function activeBurger () {
     }
     if (burgerMenu.classList.contains('active-burger')){
         burgerNav.style.width = wSize / 2 + "px";
+        burgerMenu.style.transform = `translateX(${(-wSize) / 2 + (burgerNav.firstElementChild.offsetLeft + burgerMenu.offsetWidth) / 2}px)`;
     } else {
         burgerNav.style.width = 0;
+        burgerMenu.style.transform = `translateX(0px)`;
     }
 }
 burgerMenu.addEventListener('click', activeBurger);
+
+// responsive design of navigation
 let replaceNavIndex = -1;
 function changePosMenuForResponsive () {
-    console.log(window.innerWidth);
     const navigation = document.getElementById('header-nav');
     const burgerNav = document.querySelector('.burger-nav');
     const header = document.querySelector('.header');
@@ -210,7 +214,19 @@ function changePosMenuForResponsive () {
         header.insertBefore(removeObj, posForNav);
         replaceNavIndex = -1;
     }
+    overflowContent(); // changing of padding for sliders
+    // close burger menu during resizing 
+    if(burgerMenu.classList.contains('active-burger')){
+        activeBurger();
+    }
 }
+function overflowContent () {
+    const container = document.querySelectorAll('.overflow-container');
+    container.forEach((item) => {
+        item.style.paddingLeft = item.previousElementSibling.offsetLeft + 'px';
+    });
+}
+overflowContent();
 changePosMenuForResponsive();
 window.addEventListener("resize", changePosMenuForResponsive);
 

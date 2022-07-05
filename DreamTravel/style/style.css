@@ -12,8 +12,10 @@ body {
 }
 .container {
     max-width: 1170px;
-    width: 100%;
     margin: 0 auto;
+}
+.overflow-container {
+    overflow: hidden;
 }
 .main-screen {
     display: flex;
@@ -31,6 +33,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin: 29px 0 134px;
+    width: 100%;
 }
 .logo, .footer-logo-box img {
     align-items: center;
@@ -116,9 +119,9 @@ body {
 }
 .active-burger {
     gap: 0px;
-    transform: translateX(-305px);
+    /* transform: translateX(-305px); */
     position: fixed;
-    right: -15px;
+    right: 0;
 }
 .active-burger .burger-rectangle {
     background: #292929;
@@ -728,10 +731,8 @@ body {
     right: 81px;
 }
 .cities-card-box-container {
-    width: 1200px;
-    margin: 0 auto;
+    max-width: 1170px;
     overflow: hidden;
-    padding-left: 1%;
 }
 .cities-card-box {
     margin-bottom: 94px;
@@ -802,8 +803,8 @@ body {
     padding-top: 76px;
     margin-bottom: 43px;  
 }
-.testimonials-title-box {
-    margin-bottom: 118px;
+.testimonials .overflow-container {
+    padding-top: 38px;
 }
 .testimonials-title-box .origin-left-text {
     max-width: 370px;
@@ -1265,9 +1266,6 @@ and (max-width: 991px) {
     .container {
         max-width: 540px;
     }
-    .burger-menu {
-        right: -60px;
-    }
     .burger-nav #header-nav {
         left: 90px;
     }
@@ -1393,9 +1391,6 @@ and (max-width: 599px) {
     .header {
         margin-bottom: 100px;
     }
-    .burger-menu{
-        right: -140px;
-    }
     .burger-nav #header-nav {
         left: 70px;
     }
@@ -1497,6 +1492,9 @@ and (max-width: 599px) {
     }
     .origin-text {
         margin-bottom: 60px;
+    }
+    .features-box {
+        max-width: 390px;
     }
     .cities {
         padding-top: 65px;
