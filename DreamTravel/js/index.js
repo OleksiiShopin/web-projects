@@ -60,11 +60,13 @@ function moveAboutCardLeft () {
         if (!aboutCardsBox.lastElementChild.classList.contains('active-desc')){
             countControl++;
             countOfscroll++;
-            const oldActive = document.querySelector('.active-desc');
-            oldActive.classList.remove('active-desc');
+            const Active = aboutCardsBox.children[countOfscroll];
+            if (countOfscroll !== 0){
+                Active.previousElementSibling.classList.remove('active-desc');
+            }
             aboutCardsBox.style.transform = `translateX(${-widthAboutCard * countOfscroll}px)`;
             window.setTimeout(()=> {
-                oldActive.nextElementSibling.classList.add('active-desc');
+                Active.classList.add('active-desc');
                 countControl = 0;
             },
             1000);
@@ -78,11 +80,11 @@ function moveAboutCardRight () {
         if (!aboutCardsBox.firstElementChild.classList.contains('active-desc')){
             countControl++;
             countOfscroll--;
-            const oldActive = document.querySelector('.active-desc');
-            oldActive.classList.remove('active-desc');
+            const Active = aboutCardsBox.children[countOfscroll];
+            Active.nextElementSibling.classList.remove('active-desc');
             aboutCardsBox.style.transform = `translateX(${-widthAboutCard * countOfscroll}px)`;
             window.setTimeout(()=> {
-                oldActive.previousElementSibling.classList.add('active-desc');
+                Active.classList.add('active-desc');
                 countControl = 0;
             },
             1000);
@@ -230,3 +232,56 @@ overflowContent();
 changePosMenuForResponsive();
 window.addEventListener("resize", changePosMenuForResponsive);
 
+//slider function
+const sliders = document.querySelector('.slider');
+let x1 = null;
+let x2 = null;
+let diff = 0;
+
+function slideStart(event) {
+    const firstTouch = event.touches[0];
+    x1 = firstTouch.clientX;
+}
+function slideMove(event) {
+    if (!x1){
+        return false;
+    }
+    x2 = event.touches[0].clientX;
+    diff = x1 - x2;
+    const curentPos = (-(this.firstElementChild.offsetWidth) + 35) * countOfscroll - diff;
+    if(this.classList.contains('about-destination-box')){
+        this.children[countOfscroll].classList.remove('active-desc');
+    }
+    if ((this.style.transform == "translateX(0px)" || this.style.transform == '') && diff < 0){
+        return false;
+    } else if((this.style.transform == `translateX(${(this.firstElementChild.offsetWidth + 35) * (this.childElementCount - 1)}px)`) && diff > 0){
+        return false;
+    }
+    this.style.transform = `translateX(${curentPos}px)`;
+}
+function slideEnd(event) {
+    if(this.classList.contains('about-destination-box')){
+        const moveCountSwipe = Math.trunc(diff / (this.firstElementChild.offsetWidth + 35));
+        if (diff === 0){
+            x1 = x2 = null;
+            return false;
+        }else if (Math.abs(diff) < (this.firstElementChild.offsetWidth / 2)){
+            countOfscroll--;
+            moveAboutCardLeft();
+        } else if (diff < 0 && countOfscroll !== 0){
+            countOfscroll += moveCountSwipe;
+            moveAboutCardRight();
+        } else if (diff > 0 && countOfscroll !== 2){
+            countOfscroll += moveCountSwipe;
+            moveAboutCardLeft();
+        } else {
+            countOfscroll--;
+            moveAboutCardLeft();
+        }
+        x1 = x2 = null;
+        diff = 0;
+    }
+}
+sliders.addEventListener('touchstart', slideStart);
+sliders.addEventListener('touchmove', slideMove);
+sliders.addEventListener('touchend', slideEnd);
