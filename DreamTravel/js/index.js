@@ -65,6 +65,7 @@ var swiper = new Swiper(".citiesSwiper", { //swiper for cities card
 });
 var swiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
     slidesPerView: "auto",
+    spaceBetween: 35,
     speed: 1000,
     grabCursor: true,
     navigation: {
@@ -80,6 +81,9 @@ var swiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
         disableOnInteraction: false,
     },
     breakpoints: {
+        425: {
+            spaceBetween: 20,
+        },
         992: {
             spaceBetween: 20,
         },
@@ -226,11 +230,6 @@ function changePosMenuForResponsive () {
         header.insertBefore(removeObj, posForNav);
         replaceNavIndex = -1;
     }
-    overflowContent(); // changing of padding for sliders
-    // close burger menu during resizing 
-    if(burgerMenu.classList.contains('active-burger')){
-        activeBurger();
-    }
 }
 function overflowContent () {
     const container = document.querySelectorAll('.overflow-container');
@@ -238,6 +237,17 @@ function overflowContent () {
         item.style.paddingLeft = item.previousElementSibling.offsetLeft + 'px';
     });
 }
+// function aboutArrowPosChanges () {
+//     if(window.innerWidth < 992)
+// }
+function respinsiveChanges () {
+    changePosMenuForResponsive();
+    overflowContent(); // changing of padding for sliders
+    // close burger menu during resizing 
+    if(burgerMenu.classList.contains('active-burger')){
+        activeBurger();
+    }
+}
 overflowContent();
 changePosMenuForResponsive();
-window.addEventListener("resize", changePosMenuForResponsive);
+window.addEventListener("resize", respinsiveChanges);

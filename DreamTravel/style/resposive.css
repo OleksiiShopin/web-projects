@@ -105,7 +105,10 @@ and (max-width: 991px) {
         left: 675px;
     }
     .about-destination-container{
-        margin-bottom: 46px;
+        margin-bottom: 100px;
+    }
+    .features {
+        padding-top: 0;
     }
     .travel-subscription {
         flex-direction: column;
@@ -322,6 +325,10 @@ and (max-width: 599px) {
         width: 100%;
         font-size: 0.9em;
     }
+    .people {
+        top: 50px;
+        right: -61px;
+    }
     .origin-title {
         font-size: 2em;
     }
@@ -345,7 +352,7 @@ and (max-width: 599px) {
         left: 80px;
     }
     .about-destination-container {
-        margin-bottom: 0;
+        margin-bottom: 60px;
     }
     .about-destination-card {
         max-width: 390px;

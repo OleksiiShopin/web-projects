@@ -497,7 +497,7 @@ body {
 }
 .about-destination-container {
     position: relative;
-    margin-bottom: 76px;
+    margin-bottom: 136px;
     height: 544px;
 }
 .about-destination-box {
@@ -618,7 +618,7 @@ body {
     box-shadow: none;
 }
 .features {
-    padding-top: 94px;
+    padding-top: 34px;
 }
 .features .origin-text,
 .partners .origin-text {
