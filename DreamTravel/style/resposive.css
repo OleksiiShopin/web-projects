@@ -91,6 +91,12 @@ and (max-width: 991px) {
     .advantages {
         flex-direction: column;
     }
+    .about-header {
+        position: relative;
+    }
+    .about-buttons {
+        position: relative;
+    }
     .about-title-box {
         flex-direction: column;
         align-items: flex-start;
@@ -99,7 +105,7 @@ and (max-width: 991px) {
         top: -144px;
     }
     #about-left {
-        left: 595px;
+        left: 590px;
     }
     #about-right {
         left: 675px;
@@ -217,14 +223,17 @@ and (max-width: 991px) {
     .about-title-box {
         margin-bottom: 92px;
     }
+    .about-title-box .about-title {
+        margin-right: 0;
+    }
     .switch-btn {
         top: -80px;
     }
     #about-left {
-        left: 395px;
+        left: 0;
     }
     #about-right {
-        left: 475px;
+        left: 80px;
     }
     .features-box {
         gap: 25px;
@@ -347,9 +356,11 @@ and (max-width: 599px) {
     }
     #about-left {
         left: 0;
+        bottom: 0;
     }
     #about-right {
         left: 80px;
+        bottom: 0;
     }
     .about-destination-container {
         margin-bottom: 60px;
@@ -431,5 +442,150 @@ and (max-width: 599px) {
     }
     .social-medial-cell:hover .media-text {
         color: rgba(255, 255, 255, 0.6);
+    }
+}
+@media screen
+and (max-width: 424px) {
+    .container {
+        max-width: 340px;
+    }
+    .search {
+        width: 360px;
+        margin: 0 auto;
+    }
+    .people {
+        right: -72px;
+    }
+    .about-destination-card img {
+        height: 190px;
+    }
+    .about-destination-card .gradient {
+        height: 190px;
+    }
+    
+    .about-destination-card {
+        max-width: 350px;
+        height: 190px;
+    }
+    .about-destination-card .destination-desc::before {
+        top: 150px;
+    }
+    .about-destination-card .desc-title {
+        margin-top: 53px;
+    }
+    .about-destination-card.active-desc {
+        height: 435px;
+    }
+    .about-destination-container {
+        margin-bottom: 30px;
+    }
+    .features {
+        padding-top: 0;
+    }
+    .cities-card-box {
+        width: 2440px;
+    }
+    .cities-card {
+        width: 340px;
+    }
+    .testimonials {
+        padding-top: 0;
+    }
+    .subs-title {
+        font-size: 32px;
+    }
+    .subs-form .form-email {
+        max-width: 235px;
+    }
+}
+@media screen
+and (max-width: 374px) {
+    .container {
+        max-width: 300px;
+    }
+    .header-title {
+        max-width: 300px;
+        font-size: 2em;
+    }
+    .header-text {
+        max-width: 300px;
+    }
+    .search {
+        width: 300px;
+    }
+    .origin-title {
+        font-size: 1.8em;
+    }
+    .origin-text {
+        max-width: 300px;
+    }
+    .best .advantages .card {
+        width: 300px;
+        height: 280px;
+    }
+    .best .advantages .card .icon {
+        margin-bottom: 35px;
+    }
+    .best .advantages .card .card-title {
+        font-size: 1.4em;
+    }
+    .best .advantages .card .card-text {
+        font-size: 14px;
+    }
+    .about {
+        padding-top: 35px;
+    }
+    .about-title-box .origin-left-title {
+        font-size: 1.8em;
+    }
+    .about-destination-card {
+        width: 300px;
+    }
+
+    .about-destination-container {
+        height: 474px;
+    }
+    .about-destination-card .desc-title,
+    .origin-title {
+        font-size: 1.4em;
+    }
+    .about-destination-card .desc-text {
+        font-size: 11px;
+    }
+    .about-destination-card.active-desc .destination-desc::before {
+        width: 70px;
+        height: 70px;
+    }
+    .features .card-title {
+        font-size: 1.4em;
+    }
+    .cities-card-box {
+        width: 2160px;
+    }
+    .cities-card {
+        width: 300px;
+        height: 410px;
+    }
+    .cities-card .city-desc h3 {
+        font-size: 1.6em;
+    }
+    .travel-subscription {
+        padding: 20px 25px;
+    }
+    .subs-title {
+        font-size: 29px;
+    }
+    .subs-text {
+        font-size: 12px;
+    }
+    .subs-form .form-email {
+        max-width: 205px;
+    }
+    .footer-text {
+        font-size: 12px;
+    }
+    .footer .media-icon {
+        width: 32px;
+        height: 32px;
     }
 }

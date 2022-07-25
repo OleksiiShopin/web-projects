@@ -81,6 +81,9 @@ var swiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
         disableOnInteraction: false,
     },
     breakpoints: {
+        375: {
+            spaceBetween: 10,
+        },
         425: {
             spaceBetween: 20,
         },
@@ -237,9 +240,20 @@ function overflowContent () {
         item.style.paddingLeft = item.previousElementSibling.offsetLeft + 'px';
     });
 }
-// function aboutArrowPosChanges () {
-//     if(window.innerWidth < 992)
-// }
+function aboutArrowPosChanges () {
+    const aboutDestinationContainer = document.querySelector('.about-destination-container');
+    const aboutHeader = document.querySelector('.about-header');
+    const aboutButtons = document.querySelector('.about-buttons')
+    let removeItem;
+    if (window.innerWidth >= 992 && aboutHeader.lastElementChild.classList.contains('about-buttons')) {
+        removeItem = aboutHeader.children.removeChild(aboutButtons);
+        aboutDestinationContainer.appendChild(removeItem);
+    }
+    if(window.innerWidth < 992 && !aboutHeader.lastElementChild.classList.contains('about-buttons')) {
+        removeItem = aboutDestinationContainer.removeChild(aboutButtons);
+        aboutHeader.appendChild(removeItem);
+    }
+}
 function respinsiveChanges () {
     changePosMenuForResponsive();
     overflowContent(); // changing of padding for sliders
@@ -247,7 +261,9 @@ function respinsiveChanges () {
     if(burgerMenu.classList.contains('active-burger')){
         activeBurger();
     }
+    aboutArrowPosChanges(); // about buttons replace to about header and vice versa
 }
 overflowContent();
 changePosMenuForResponsive();
+aboutArrowPosChanges();
 window.addEventListener("resize", respinsiveChanges);
