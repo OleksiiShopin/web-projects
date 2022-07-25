@@ -48,21 +48,6 @@ plusBtn.forEach((item) => {
     item.addEventListener('click', increse_people)
 });
 
-var swiper = new Swiper(".aboutSwiper", { //swiper for about card
-    slidesPerView: "auto",
-    spaceBetween: 35,
-    speed: 500,
-    grabCursor: true,
-    rewind: true,
-    navigation: {
-        nextEl: '#cities-left',
-        prevEl: '#cities-right',
-    },
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-});
 var swiper = new Swiper(".citiesSwiper", { //swiper for cities card
     slidesPerView: "auto",
     spaceBetween: 35,
@@ -76,26 +61,10 @@ var swiper = new Swiper(".citiesSwiper", { //swiper for cities card
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
-    },
-});
-var swiper = new Swiper(".citiesSwiper", { //swiper for cities card
-    slidesPerView: "auto",
-    spaceBetween: 35,
-    speed: 500,
-    grabCursor: true,
-    rewind: true,
-    navigation: {
-        nextEl: '#cities-left',
-        prevEl: '#cities-right',
-    },
-    scrollbar: {
-        el: '.swiper-scrollbar',
-        hide: true,
     },
 });
 var swiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
     slidesPerView: "auto",
-    spaceBetween: 35,
     speed: 1000,
     grabCursor: true,
     navigation: {
@@ -110,7 +79,16 @@ var swiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
         delay: 4000,
         disableOnInteraction: false,
     },
+    breakpoints: {
+        992: {
+            spaceBetween: 20,
+        },
+        1200: {
+            spaceBetween: 35,
+        }
+    },
 });
+
 // active button in about block
 const aboutBtn_l = document.getElementById('about-left');
 const aboutBtn_r = document.getElementById('about-right');
@@ -158,90 +136,59 @@ function moveAboutCardRight () {
 aboutBtn_l.addEventListener('click', moveAboutCardLeft);
 aboutBtn_r.addEventListener('click', moveAboutCardRight);
 
-const citiesCardsBox = document.querySelector('.cities-card-box');
+//slider function
+const sliders = document.querySelector('.slider');
+let x1 = null;
+let x2 = null;
+let diff = 0;
 
-// functions move city card
-const citiesBtn_r = document.getElementById('cities-right');
-const citiesBtn_l = document.getElementById('cities-left');
-let cityMovedCounter = 0;
-function moveCitiesCardLeft () {
-    const citiesCardsBox = document.querySelector('.cities-card-box');
-    const numberOfChild = citiesCardsBox.childElementCount;
-    let numberVisibleCard = 3;
-    if (citiesCardsBox.offsetParent.offsetWidth < 992) {
-        numberVisibleCard = 1;
-    } else if (citiesCardsBox.offsetParent.offsetWidth >= 992 && citiesCardsBox.offsetParent.offsetWidth < 1200){
-        numberVisibleCard = 2;
-    } else {
-        numberVisibleCard = 3;
-    }
-    if(numberOfChild - numberVisibleCard > cityMovedCounter){
-        cityMovedCounter++;
-        citiesCardsBox.style.transform = `translateX(${-399 * cityMovedCounter}px)`;
-    }
+function slideStart(event) {
+    const firstTouch = event.touches[0];
+    x1 = firstTouch.clientX;
 }
-function moveCitiesCardRight () {
-    const citiesCardsBox = document.querySelector('.cities-card-box');
-    if(cityMovedCounter > 0){
-        cityMovedCounter--;
-        citiesCardsBox.style.transform = `translateX(${-399 * cityMovedCounter}px)`;
+function slideMove(event) {
+    if (!x1){
+        return false;
     }
+    x2 = event.touches[0].clientX;
+    diff = x1 - x2;
+    const curentPos = (-(this.firstElementChild.offsetWidth) + 35) * countOfscroll - diff;
+    if(this.classList.contains('about-destination-box')){
+        this.children[countOfscroll].classList.remove('active-desc');
+    }
+    if ((this.style.transform == "translateX(0px)" || this.style.transform == '') && diff < 0){
+        return false;
+    } else if((this.style.transform == `translateX(${(this.firstElementChild.offsetWidth + 35) * (this.childElementCount - 1)}px)`) && diff > 0){
+        return false;
+    }
+    this.style.transform = `translateX(${curentPos}px)`;
 }
-// citiesBtn_l.addEventListener('click', moveCitiesCardLeft);
-// citiesBtn_r.addEventListener('click', moveCitiesCardRight);
-
-// functions move testimonial card
-const testimonialsBtn_l = document.getElementById('testimonials-left');
-const testimonialsBtn_r = document.getElementById('testimonials-right');
-let testimonialsMoveCounter = 0;
-function moveTestimonialsCardLeft () {
-    const testiomonalsCardBox = document.querySelector('.testimonials-card-box');
-    let moveWholeCard = 335;
-    if (testiomonalsCardBox.offsetParent.offsetWidth >= 992 && testiomonalsCardBox.offsetParent.offsetWidth < 1200){
-        moveWholeCard = 320;
-    } else {
-        moveWholeCard = 335;
-    }
-    const viisibleWidth = testiomonalsCardBox.offsetWidth - testiomonalsCardBox.parentElement.previousElementSibling.offsetWidth;
-    const numberOfScroll = Math.trunc((viisibleWidth) / moveWholeCard);
-    const restWidth = (testiomonalsCardBox.offsetWidth - moveWholeCard * numberOfScroll) % testiomonalsCardBox.parentElement.previousElementSibling.offsetWidth;
-    if (numberOfScroll === 0 && testimonialsMoveCounter === 0){
-        testiomonalsCardBox.style.transform = `translateX(${- restWidth}px)`; 
-        testimonialsMoveCounter++;
-    }else if (testimonialsMoveCounter <= numberOfScroll){
-        testimonialsMoveCounter++;
-        if (testimonialsMoveCounter > numberOfScroll){
-            testiomonalsCardBox.style.transform = `translateX(${-moveWholeCard * (testimonialsMoveCounter - 1) - restWidth}px)`;
+function slideEnd(event) {
+    if(this.classList.contains('about-destination-box')){
+        const moveCountSwipe = Math.trunc(diff / (this.firstElementChild.offsetWidth + 35));
+        if (diff === 0){
+            x1 = x2 = null;
+            return false;
+        }else if (Math.abs(diff) < (this.firstElementChild.offsetWidth / 2)){
+            countOfscroll--;
+            moveAboutCardLeft();
+        } else if (diff < 0 && countOfscroll !== 0){
+            countOfscroll += moveCountSwipe;
+            moveAboutCardRight();
+        } else if (diff > 0 && countOfscroll !== 2){
+            countOfscroll += moveCountSwipe;
+            moveAboutCardLeft();
         } else {
-            testiomonalsCardBox.style.transform = `translateX(${-moveWholeCard * testimonialsMoveCounter}px)`;
+            countOfscroll--;
+            moveAboutCardLeft();
         }
+        x1 = x2 = null;
+        diff = 0;
     }
 }
-function moveTestimonialsCardRight () {
-    const testiomonalsCardBox = document.querySelector('.testimonials-card-box');
-    let moveWholeCard = 335;
-    if (testiomonalsCardBox.offsetParent.offsetWidth >= 992 && testiomonalsCardBox.offsetParent.offsetWidth < 1200){
-        moveWholeCard = 320;
-    } else {
-        moveWholeCard = 335;
-    }
-    const viisibleWidth = testiomonalsCardBox.offsetWidth - testiomonalsCardBox.parentElement.previousElementSibling.offsetWidth;
-    const numberOfScroll = Math.trunc((viisibleWidth) / moveWholeCard);
-    const restWidth = (testiomonalsCardBox.offsetWidth - moveWholeCard * numberOfScroll) % testiomonalsCardBox.parentElement.previousElementSibling.offsetWidth;
-    if (numberOfScroll === 0 && testimonialsMoveCounter > 0){
-        testiomonalsCardBox.style.transform = `translateX(0)`;
-        testimonialsMoveCounter--;
-    }else if (testimonialsMoveCounter > 0){
-        testimonialsMoveCounter--;
-        if (testimonialsMoveCounter > numberOfScroll){
-            testiomonalsCardBox.style.transform = `translateX(${-moveWholeCard * (testimonialsMoveCounter - 1) - restWidth}px)`;
-        } else {
-            testiomonalsCardBox.style.transform = `translateX(${-moveWholeCard * testimonialsMoveCounter}px)`;
-        }
-    }
-}
-// testimonialsBtn_l.addEventListener('click', moveTestimonialsCardLeft);
-// testimonialsBtn_r.addEventListener('click', moveTestimonialsCardRight);
+sliders.addEventListener('touchstart', slideStart);
+sliders.addEventListener('touchmove', slideMove);
+sliders.addEventListener('touchend', slideEnd);
 
 //burger menu activation 
 const burgerMenu = document.querySelector('.burger-menu');
@@ -294,58 +241,3 @@ function overflowContent () {
 overflowContent();
 changePosMenuForResponsive();
 window.addEventListener("resize", changePosMenuForResponsive);
-
-//slider function
-// const sliders = document.querySelector('.slider');
-// let x1 = null;
-// let x2 = null;
-// let diff = 0;
-
-// function slideStart(event) {
-//     const firstTouch = event.touches[0];
-//     x1 = firstTouch.clientX;
-// }
-// function slideMove(event) {
-//     if (!x1){
-//         return false;
-//     }
-//     x2 = event.touches[0].clientX;
-//     diff = x1 - x2;
-//     const curentPos = (-(this.firstElementChild.offsetWidth) + 35) * countOfscroll - diff;
-//     if(this.classList.contains('about-destination-box')){
-//         this.children[countOfscroll].classList.remove('active-desc');
-//     }
-//     if ((this.style.transform == "translateX(0px)" || this.style.transform == '') && diff < 0){
-//         return false;
-//     } else if((this.style.transform == `translateX(${(this.firstElementChild.offsetWidth + 35) * (this.childElementCount - 1)}px)`) && diff > 0){
-//         return false;
-//     }
-//     this.style.transform = `translateX(${curentPos}px)`;
-// }
-// function slideEnd(event) {
-//     if(this.classList.contains('about-destination-box')){
-//         const moveCountSwipe = Math.trunc(diff / (this.firstElementChild.offsetWidth + 35));
-//         if (diff === 0){
-//             x1 = x2 = null;
-//             return false;
-//         }else if (Math.abs(diff) < (this.firstElementChild.offsetWidth / 2)){
-//             countOfscroll--;
-//             moveAboutCardLeft();
-//         } else if (diff < 0 && countOfscroll !== 0){
-//             countOfscroll += moveCountSwipe;
-//             moveAboutCardRight();
-//         } else if (diff > 0 && countOfscroll !== 2){
-//             countOfscroll += moveCountSwipe;
-//             moveAboutCardLeft();
-//         } else {
-//             countOfscroll--;
-//             moveAboutCardLeft();
-//         }
-//         x1 = x2 = null;
-//         diff = 0;
-//     }
-// }
-// sliders.addEventListener('touchstart', slideStart);
-// sliders.addEventListener('touchmove', slideMove);
-// sliders.addEventListener('touchend', slideEnd);
-
