@@ -8,8 +8,18 @@
     <title>Dream Travel agency</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" 
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" 
+        crossorigin="anonymous" 
+    />
+    <link
+      rel="stylesheet"
+      href="style/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/resposive.css">
 </head>
 <body>
     <section class="main-screen">
@@ -267,9 +277,9 @@
             <div id="cities-right" class="switch-btn btn-r"></div>
         </div>
         <div class="overflow-container">
-            <div class="cities-card-box-container">
-                <div class="cities-card-box">
-                    <div class="cities-card">
+            <div class="cities-card-box-container swiper citiesSwiper">
+                <div class="cities-card-box swiper-wrapper">
+                    <div class="cities-card swiper-slide">
                         <div class="city">Dubai</div>
                         <div class="city-desc">
                             <h3>United Arab Emirates</h3>
@@ -277,7 +287,7 @@
                         </div>
                         <img src="img/cityDubai.png" alt="Dubai">
                     </div>
-                    <div class="cities-card">
+                    <div class="cities-card swiper-slide">
                         <div class="city">Bali</div>
                         <div class="city-desc">
                             <h3>Indonesia</h3>
@@ -285,7 +295,7 @@
                         </div>
                         <img src="img/cityBali.png" alt="Bali">
                     </div>
-                    <div class="cities-card">
+                    <div class="cities-card swiper-slide">
                         <div class="city">Barcelona</div>
                         <div class="city-desc">
                             <h3>Spain</h3>
@@ -293,7 +303,7 @@
                         </div>
                         <img src="img/cityBarcelona.png" alt="Barcelona">
                     </div>
-                    <div class="cities-card">
+                    <div class="cities-card swiper-slide">
                         <div class="city">Barcelona</div>
                         <div class="city-desc">
                             <h3>Spain</h3>
@@ -301,7 +311,7 @@
                         </div>
                         <img src="img/cityBarcelona.png" alt="Barcelona">
                     </div>
-                    <div class="cities-card">
+                    <div class="cities-card swiper-slide">
                         <div class="city">Dubai</div>
                         <div class="city-desc">
                             <h3>United Arab Emirates</h3>
@@ -309,7 +319,7 @@
                         </div>
                         <img src="img/cityDubai.png" alt="Dubai">
                     </div>
-                    <div class="cities-card">
+                    <div class="cities-card swiper-slide">
                         <div class="city">Bali</div>
                         <div class="city-desc">
                             <h3>Indonesia</h3>
@@ -317,7 +327,7 @@
                         </div>
                         <img src="img/cityBali.png" alt="Bali">
                     </div>
-                    <div class="cities-card">
+                    <div class="cities-card swiper-slide">
                         <div class="city">Barcelona</div>
                         <div class="city-desc">
                             <h3>Spain</h3>
@@ -341,176 +351,179 @@
             </div>
         </div>
         <div class="overflow-container">
-            <div class="testimonials-card-box">
-                <div class="testimonials-card">
-                    <div class="testimonials-card-header">
-                        <div class="photo">
-                            <img src="img/person 1.png" alt="Person">
+            <div class="testimonials-card-container swiper testimonialsSwiper">
+                <div class="testimonials-card-box swiper-wrapper">
+                    <div class="testimonials-card swiper-slide">
+                        <div class="testimonials-card-header">
+                            <div class="photo">
+                                <img src="img/person 1.png" alt="Person">
+                            </div>
+                            <div class="testimonials-card-title-box">
+                                <h3>Sayem Ahmed</h3>
+                                <p>Product designer</p>
+                            </div>
                         </div>
-                        <div class="testimonials-card-title-box">
-                            <h3>Sayem Ahmed</h3>
-                            <p>Product designer</p>
+                        <div class="testimonials-card-desc">
+                            <div class="stars">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                            </div>
+                            <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
                         </div>
                     </div>
-                    <div class="testimonials-card-desc">
-                        <div class="stars">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
+                    <div class="testimonials-card swiper-slide">
+                        <div class="testimonials-card-header">
+                            <div class="photo">
+                                <img src="img/person 2.png" alt="Person">
+                            </div>
+                            <div class="testimonials-card-title-box">
+                                <h3>John Smith</h3>
+                                <p>Product designer</p>
+                            </div>
                         </div>
-                        <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                        <div class="testimonials-card-desc">
+                            <div class="stars">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                            </div>
+                            <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                        </div>
+                    </div>
+                    <div class="testimonials-card swiper-slide">
+                        <div class="testimonials-card-header">
+                            <div class="photo">
+                                <img src="img/person 3.png" alt="Person">
+                            </div>
+                            <div class="testimonials-card-title-box">
+                                <h3>Rowhan Doe</h3>
+                                <p>Product designer</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-card-desc">
+                            <div class="stars">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                            </div>
+                            <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                        </div>
+                    </div>
+                    <div class="testimonials-card swiper-slide">
+                        <div class="testimonials-card-header">
+                            <div class="photo">
+                                <img src="img/person 1.png" alt="Person">
+                            </div>
+                            <div class="testimonials-card-title-box">
+                                <h3>Adnan Roe</h3>
+                                <p>Product designer</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-card-desc">
+                            <div class="stars">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/starNoFill.svg" alt="Star">
+                            </div>
+                            <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                        </div>
+                    </div>
+        
+                    <div class="testimonials-card swiper-slide">
+                        <div class="testimonials-card-header">
+                            <div class="photo">
+                                <img src="img/person 1.png" alt="Person">
+                            </div>
+                            <div class="testimonials-card-title-box">
+                                <h3>Sayem Ahmed</h3>
+                                <p>Product designer</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-card-desc">
+                            <div class="stars">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                            </div>
+                            <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                        </div>
+                    </div>
+                    <div class="testimonials-card swiper-slide">
+                        <div class="testimonials-card-header">
+                            <div class="photo">
+                                <img src="img/person 2.png" alt="Person">
+                            </div>
+                            <div class="testimonials-card-title-box">
+                                <h3>John Smith</h3>
+                                <p>Product designer</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-card-desc">
+                            <div class="stars">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                            </div>
+                            <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                        </div>
+                    </div>
+                    <div class="testimonials-card swiper-slide">
+                        <div class="testimonials-card-header">
+                            <div class="photo">
+                                <img src="img/person 3.png" alt="Person">
+                            </div>
+                            <div class="testimonials-card-title-box">
+                                <h3>Rowhan Doe</h3>
+                                <p>Product designer</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-card-desc">
+                            <div class="stars">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                            </div>
+                            <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                        </div>
+                    </div>
+                    <div class="testimonials-card swiper-slide">
+                        <div class="testimonials-card-header">
+                            <div class="photo">
+                                <img src="img/person 1.png" alt="Person">
+                            </div>
+                            <div class="testimonials-card-title-box">
+                                <h3>Adnan Roe</h3>
+                                <p>Product designer</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-card-desc">
+                            <div class="stars">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/star.svg" alt="Star">
+                                <img src="img/starNoFill.svg" alt="Star">
+                            </div>
+                            <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonials-card">
-                    <div class="testimonials-card-header">
-                        <div class="photo">
-                            <img src="img/person 2.png" alt="Person">
-                        </div>
-                        <div class="testimonials-card-title-box">
-                            <h3>John Smith</h3>
-                            <p>Product designer</p>
-                        </div>
-                    </div>
-                    <div class="testimonials-card-desc">
-                        <div class="stars">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                        </div>
-                        <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
-                    </div>
-                </div>
-                <div class="testimonials-card">
-                    <div class="testimonials-card-header">
-                        <div class="photo">
-                            <img src="img/person 3.png" alt="Person">
-                        </div>
-                        <div class="testimonials-card-title-box">
-                            <h3>Rowhan Doe</h3>
-                            <p>Product designer</p>
-                        </div>
-                    </div>
-                    <div class="testimonials-card-desc">
-                        <div class="stars">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                        </div>
-                        <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
-                    </div>
-                </div>
-                <div class="testimonials-card">
-                    <div class="testimonials-card-header">
-                        <div class="photo">
-                            <img src="img/person 1.png" alt="Person">
-                        </div>
-                        <div class="testimonials-card-title-box">
-                            <h3>Adnan Roe</h3>
-                            <p>Product designer</p>
-                        </div>
-                    </div>
-                    <div class="testimonials-card-desc">
-                        <div class="stars">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/starNoFill.svg" alt="Star">
-                        </div>
-                        <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
-                    </div>
-                </div>
-    
-                <div class="testimonials-card">
-                    <div class="testimonials-card-header">
-                        <div class="photo">
-                            <img src="img/person 1.png" alt="Person">
-                        </div>
-                        <div class="testimonials-card-title-box">
-                            <h3>Sayem Ahmed</h3>
-                            <p>Product designer</p>
-                        </div>
-                    </div>
-                    <div class="testimonials-card-desc">
-                        <div class="stars">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                        </div>
-                        <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
-                    </div>
-                </div>
-                <div class="testimonials-card">
-                    <div class="testimonials-card-header">
-                        <div class="photo">
-                            <img src="img/person 2.png" alt="Person">
-                        </div>
-                        <div class="testimonials-card-title-box">
-                            <h3>John Smith</h3>
-                            <p>Product designer</p>
-                        </div>
-                    </div>
-                    <div class="testimonials-card-desc">
-                        <div class="stars">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                        </div>
-                        <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
-                    </div>
-                </div>
-                <div class="testimonials-card">
-                    <div class="testimonials-card-header">
-                        <div class="photo">
-                            <img src="img/person 3.png" alt="Person">
-                        </div>
-                        <div class="testimonials-card-title-box">
-                            <h3>Rowhan Doe</h3>
-                            <p>Product designer</p>
-                        </div>
-                    </div>
-                    <div class="testimonials-card-desc">
-                        <div class="stars">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                        </div>
-                        <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
-                    </div>
-                </div>
-                <div class="testimonials-card">
-                    <div class="testimonials-card-header">
-                        <div class="photo">
-                            <img src="img/person 1.png" alt="Person">
-                        </div>
-                        <div class="testimonials-card-title-box">
-                            <h3>Adnan Roe</h3>
-                            <p>Product designer</p>
-                        </div>
-                    </div>
-                    <div class="testimonials-card-desc">
-                        <div class="stars">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/star.svg" alt="Star">
-                            <img src="img/starNoFill.svg" alt="Star">
-                        </div>
-                        <p>Before we define any approach, we need to define the brands' overall goal. We then need to dive.</p>
-                    </div>
-                </div>
+                <div class="swiper-scrollbar"></div>
             </div>
         </div>
     </section>
@@ -574,5 +587,16 @@
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
 <script src="js/index.js"></script>
+<script>
+//     var swiper = new Swiper(".citiesSwiper", {
+//     slidesPerView: "auto",
+//     spaceBetween: 35,
+//     navigation: {
+//         nextEl: '#cities-left',
+//         prevEl: '#cities-right',
+//     },
+//   });
+</script>
 </html>

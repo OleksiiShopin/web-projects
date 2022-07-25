@@ -1,0 +1,428 @@
+@media only screen 
+and (min-width: 1200px)
+and (max-width: 1235px){
+    body {
+        overflow-x: hidden;
+    }
+    .container {
+        max-width: 1120px;
+    }
+    .features-box {
+        gap: 20px;
+    }
+}
+@media screen 
+and (min-width: 992px)
+and (max-width: 1199px) {
+    .container, .swiper {
+        max-width: 950px;
+    }
+    .best .advantages {
+        gap: 20px;
+    }
+    .best .advantages .card {
+        width: 306px;
+    }
+    .about-title-box .about-title {
+        margin-right: 120px;
+    }
+    .about-title-box .about-text {
+        max-width: 413px;
+    }
+    .testimonials-card-box {
+        gap: 20px;
+        width: 2540px;
+    }
+    .travel-subscription {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 42px 90px;
+    }
+    .travel-subscription-offer {
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: 100%;
+        width: 100%;
+    }
+    .travel-subscription-offer .subs-text {
+        max-width: 280px;
+    }
+    .subs-form {
+        width: 100%;;
+    }
+    .form-submit {
+        width: 200px;
+    }
+
+}
+@media screen 
+and (max-width: 991px) {
+    .container, .swiper {
+        max-width: 720px;
+    }
+    .burger-menu {
+        display: flex;
+    }
+    .head-btn {
+        border: none;
+    }
+    .header {
+        margin-bottom: 120px;
+    }
+    .header-title {
+        font-size: 3.6em;
+    }
+    .header-text {
+        font-size: 16px;
+    }
+    .search {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .search-btn {
+        width: 350px;
+    }
+    .main-screen {
+        margin-bottom: 120px;
+    }
+    .advantages {
+        flex-direction: column;
+    }
+    .about-title-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .switch-btn {
+        top: -144px;
+    }
+    #about-left {
+        left: 595px;
+    }
+    #about-right {
+        left: 675px;
+    }
+    .about-destination-container{
+        margin-bottom: 46px;
+    }
+    .travel-subscription {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 42px 90px;
+        gap: 20px;
+        height: auto;
+    }
+    .travel-subscription-offer {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        width: 100%;
+        gap: 10px;
+        height: auto;
+    }
+    .travel-subscription-offer .subs-text {
+        max-width: 100%;
+    }
+    .subs-form {
+        width: 100%;;
+    }
+    .form-submit {
+        width: 200px;
+    }
+    .footer-social-media {
+        width: 150px;
+        height: 100px;
+    }
+    .footer .media-icon {
+        width: 38px;
+        height: 38px;
+    }
+    .media-icon:hover {
+        background:rgba(255, 255, 255, 0.8);
+        transition: 0.5s;
+    }
+    .footer .media-icon::after {
+        display: none;
+    }
+    .media-text {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .container, .swiper {
+        max-width: 540px;
+    }
+    .burger-nav #header-nav {
+        left: 90px;
+    }
+    .header-title {
+        font-size: 2.8em;
+        line-height: 70px;
+    }
+    .header-text {
+        font-size: 15px;
+    }
+    .search-param {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 540px;
+        gap: 30px;
+        padding-top: 30px;
+    }
+    .search-param .search-block:not(:last-child),
+    .search-param  .search-block input {
+        width: 100%;
+        max-width: 100%;
+    }
+    .search-block:not(:last-child){
+        border-right: none;
+        border-bottom: 1px solid #E6E6E6;
+        height: 25px;
+        padding-bottom: 10px;
+    }
+    .people-block {
+        align-self: center;
+    }
+    .btn-people {
+        color: #292929;
+    }
+    .search-btn {
+        width: 100%;
+    }
+    .origin-title {
+        font-size: 2.4em;
+    }
+    .origin-text {
+        font-size: 14px;
+        max-width: 450px;
+    }
+    .origin-left-title {
+        font-size: 2.4em;
+    }
+    .origin-left-text {
+        font-size: 14px;
+    }
+    .about-title-box .origin-left-title {
+        max-width: 100%;
+    }
+    .best .advantages {
+        margin-bottom: 70px;
+    }
+    .about-title-box {
+        margin-bottom: 92px;
+    }
+    .switch-btn {
+        top: -80px;
+    }
+    #about-left {
+        left: 395px;
+    }
+    #about-right {
+        left: 475px;
+    }
+    .features-box {
+        gap: 25px;
+    }
+    .cities-title-box .origin-left-text {
+        max-width: 350px;
+    }
+    .subs-title {
+        font-size: 35px;
+    }
+    .subs-text {
+        font-size: 14px;
+    }
+    .subs-form {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 8px 22px;
+    }
+    .form-email {
+        height: 71px;
+    }
+    .form-submit {
+        width: 100%;
+    }
+    .footer {
+        height: auto;
+    }
+    .footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .footer-social-media {
+        width: 100%;
+        min-width: 100%;
+    }
+    .footer-logo-box {
+        gap: 10px;
+    }
+    .social-media-colum {
+        flex-direction: row;
+        justify-content: start;
+        width: 50%;
+        gap: 85px;
+    }
+}
+@media screen
+and (max-width: 599px) {
+    .container, .swiper {
+        max-width: 390px;
+    }
+    .main-screen {
+        margin-bottom: 100px;
+    }
+    .header {
+        margin-bottom: 100px;
+    }
+    .burger-nav #header-nav {
+        left: 70px;
+    }
+    #header-nav ul {
+        gap: 45px;
+    }
+    #header-nav a{
+        font-size: 14px;
+    }
+    .header-right {
+        gap: 10px;
+    }
+    .head-btn {
+        visibility: hidden;
+        font-size: 12px;
+        width: 140px;
+        position: fixed;
+        z-index: 13;
+        right: -300px;
+        color: #292929;
+        border: 1px solid #10100E;
+        transition: 1.5s;
+    }
+    .active-burger.head-btn {
+       visibility: visible;
+    }
+    .header-title {
+        font-size: 2.2em;
+        line-height: 60px;
+        max-width: 360px;
+    }
+    .header-text {
+        font-size: 12px;
+        max-width: 370px;
+    }
+    .search {
+        width: 380px;
+    }
+    .search-param {
+        width: 100%;
+        font-size: 0.9em;
+    }
+    .origin-title {
+        font-size: 2em;
+    }
+    .origin-text {
+        font-size: 12px;
+    }
+    .origin-left-title {
+        font-size: 2em;
+    }
+    .origin-left-text {
+        font-size: 12px;
+    }
+    .about-title-box .origin-left-title {
+        margin-right: 0;
+        line-height: 48px;
+    }
+    #about-left {
+        left: 0;
+    }
+    #about-right {
+        left: 80px;
+    }
+    .about-destination-container {
+        margin-bottom: 0;
+    }
+    .about-destination-card {
+        max-width: 390px;
+    }
+    .about-destination-card {
+        height: 210px;
+    }
+    .about-destination-card.active-desc {
+        height: 455px;
+    }
+    .about-destination-card .destination-desc::before {
+        top: 170px;
+        width: 78px;
+        height: 78px;
+    }
+    .about-destination-card img {
+        height: 210px;
+    }
+    .about-destination-card .gradient {
+        height: 210px;
+    }
+    .about-destination-card .desc-title {
+        font-size: 1.8em;
+    }
+    .about-destination-card  .desc-text {
+        font-size: 0.8em;
+    }
+    .features {
+        padding-top: 64px;
+    }
+    .features .origin-text {
+        max-width: 395px;
+    }
+    .origin-text {
+        margin-bottom: 60px;
+    }
+    .features-box {
+        max-width: 390px;
+    }
+    .cities {
+        padding-top: 65px;
+    }
+    .switch-btn.btn-l {
+        left: 0;
+        bottom: -65px;
+    }
+    .switch-btn.btn-r {
+        left: 80px;
+        bottom: -65px;
+    }
+    .cities-card-box-container {
+        max-width: 390px;
+        overflow: hidden;
+    }
+    .cities-card-box {
+        margin-bottom: 46px;
+    }
+    .testimonials {
+        margin-bottom: -10px;
+    }
+    .travel-subscription {
+        padding: 20px 30px;
+    }
+    .footer .container {
+        gap: 40px;
+    }
+    .subs-form .form-email {
+        max-width: 300px;
+    }
+    .social-media-colum {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .social-media-colum .media-text{
+        display: block;
+    }
+    .social-medial-cell:hover .media-text {
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
