@@ -846,8 +846,8 @@ body {
     left: -8px;
     width: 77px;
     height: 77px;
+    box-shadow: 0px 15px 30px rgba(41, 33, 74, 0.1);
     border-radius: 50%;
-    filter: drop-shadow(0px 30px 70px rgba(41, 33, 74, 0.1));
     overflow: hidden;
 }
 .testimonials-card .photo img {
