@@ -55,8 +55,8 @@ var swiper = new Swiper(".citiesSwiper", { //swiper for cities card
     grabCursor: true,
     rewind: true,
     navigation: {
-        nextEl: '#cities-left',
-        prevEl: '#cities-right',
+        nextEl: '#cities-right',
+        prevEl: '#cities-left',
     },
     autoplay: {
         delay: 5000,
@@ -69,8 +69,8 @@ var swiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
     speed: 1000,
     grabCursor: true,
     navigation: {
-        nextEl: '#testimonials-left',
-        prevEl: '#testimonials-right',
+        nextEl: '#testimonials-right',
+        prevEl: '#testimonials-left',
     },
     scrollbar: {
         el: '.swiper-scrollbar',
@@ -102,7 +102,7 @@ const aboutBtn_r = document.getElementById('about-right');
 
 let countOfscroll = 0;
 let countControl = 0;
-function moveAboutCardLeft () {
+function moveAboutCardNext () {
     if (countControl === 0){
         const aboutCardsBox = document.querySelector('.about-destination-box');
         let widthAboutCard = aboutCardsBox.firstElementChild.offsetWidth + 35;
@@ -122,7 +122,7 @@ function moveAboutCardLeft () {
         }
     }
 }
-function moveAboutCardRight () {
+function moveAboutCardPrev () {
     if (countControl === 0){
         const aboutCardsBox = document.querySelector('.about-destination-box');
         let widthAboutCard = aboutCardsBox.firstElementChild.offsetWidth + 35;
@@ -140,8 +140,8 @@ function moveAboutCardRight () {
         }
     }
 }
-aboutBtn_l.addEventListener('click', moveAboutCardLeft);
-aboutBtn_r.addEventListener('click', moveAboutCardRight);
+aboutBtn_l.addEventListener('click', moveAboutCardPrev);
+aboutBtn_r.addEventListener('click', moveAboutCardNext);
 
 //slider function
 const sliders = document.querySelector('.slider');
@@ -178,16 +178,16 @@ function slideEnd(event) {
             return false;
         }else if (Math.abs(diff) < (this.firstElementChild.offsetWidth / 2)){
             countOfscroll--;
-            moveAboutCardLeft();
+            moveAboutCardNext();
         } else if (diff < 0 && countOfscroll !== 0){
             countOfscroll += moveCountSwipe;
-            moveAboutCardRight();
+            moveAboutCardPrev();
         } else if (diff > 0 && countOfscroll !== 2){
             countOfscroll += moveCountSwipe;
-            moveAboutCardLeft();
+            moveAboutCardNext();
         } else {
             countOfscroll--;
-            moveAboutCardLeft();
+            moveAboutCardNext();
         }
         x1 = x2 = null;
         diff = 0;
