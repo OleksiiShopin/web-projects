@@ -59,7 +59,7 @@ var swiper = new Swiper(".citiesSwiper", { //swiper for cities card
         prevEl: '#cities-left',
     },
     autoplay: {
-        delay: 5000,
+        delay: 10000,
         disableOnInteraction: false,
     },
 });
@@ -77,7 +77,7 @@ var swiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
         hide: true,
     },
     autoplay: {
-        delay: 4000,
+        delay: 10000,
         disableOnInteraction: false,
     },
     breakpoints: {
