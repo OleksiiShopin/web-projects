@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Simple Tasks App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="app">
+        <h1 class="app-title">Simple Tasks App</h1>
+        <form action="#" class="task-form" id="task-form">
+          <h2 class="task-form__title">
+            Create task
+          </h2>
+          <input
+            class="input"
+            type="text"
+            name="task-name"
+            id="task-name"
+            placeholder="Title"
+            required
+          />
+          <textarea
+            class="input textarea"
+            name="task-description"
+            id="task-description"
+            placeholder="Description"
+            rows="4"
+          ></textarea>
+          <button class="btn" type="submit">Save</button>
+        </form>
+        <div class="tasks-container" id="tasks">
+         
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

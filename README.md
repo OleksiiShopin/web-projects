@@ -1,4 +1,6 @@
 # web-projects
 
-Case 1: https://oleksiishopin.github.io/web-projects/DreamTravel
-Case 2: https://oleksiishopin.github.io/web-projects/Logoipsum
+You can see my portfolio website [here](https://oleksii-shopin.netify.app)
+<br>
+⚡️ Case 1: [DreamTravel](https://oleksiishopin.github.io/web-projects/projects/DreamTravel)
+⚡️ Case 2: [Logoipsum](https://oleksiishopin.github.io/web-projects/projects/Logoipsum)

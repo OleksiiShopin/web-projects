@@ -257,6 +257,9 @@ body {
     display: flex;
     align-items: center;
 }
+.btn-people p {
+    transition: 0.5s;
+}
 .btn-search-param,
 .btn-min,
 .btn-pls,
@@ -298,6 +301,12 @@ body {
 #mPerson.focus-person ~ .btn-people ion-icon {
     transform: rotate(180deg);
     transition: 0.5s;
+}
+#mPerson:hover ~ .btn-people, 
+#mPerson.focus-person ~ .btn-people,
+.people ion-icon:hover,
+.focus-icon {
+    color: #292929;
 }
 .people {
     position: absolute;

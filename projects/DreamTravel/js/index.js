@@ -48,52 +48,22 @@ plusBtn.forEach((item) => {
     item.addEventListener('click', increse_people)
 });
 
-var swiper = new Swiper(".citiesSwiper", { //swiper for cities card
-    slidesPerView: "auto",
-    spaceBetween: 35,
-    speed: 500,
-    grabCursor: true,
-    rewind: true,
-    navigation: {
-        nextEl: '#cities-right',
-        prevEl: '#cities-left',
-    },
-    autoplay: {
-        delay: 10000,
-        disableOnInteraction: false,
-    },
-});
-var swiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
-    slidesPerView: "auto",
-    spaceBetween: 35,
-    speed: 1000,
-    grabCursor: true,
-    navigation: {
-        nextEl: '#testimonials-right',
-        prevEl: '#testimonials-left',
-    },
-    scrollbar: {
-        el: '.swiper-scrollbar',
-        hide: true,
-    },
-    autoplay: {
-        delay: 10000,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        375: {
-            spaceBetween: 10,
-        },
-        425: {
-            spaceBetween: 20,
-        },
-        992: {
-            spaceBetween: 20,
-        },
-        1200: {
-            spaceBetween: 35,
-        }
-    },
+//change color of icons when focus on input
+const searchBlocks = [document.querySelector('.destination-block'),
+                      document.querySelector('.location-block')
+];
+function setColorIcon() {
+    
+}
+searchBlocks.forEach((item) => {
+    const inputItem = item.querySelector('input');
+    const iconItem = item.querySelector('ion-icon');
+    inputItem.addEventListener('focusin', () => 
+        iconItem.classList.add('focus-icon')
+    );
+    inputItem.addEventListener('focusout', () => 
+        iconItem.classList.remove('focus-icon')
+    );
 });
 
 // active button in about block
@@ -267,3 +237,51 @@ overflowContent();
 changePosMenuForResponsive();
 aboutArrowPosChanges();
 window.addEventListener("resize", respinsiveChanges);
+
+// Setting for swipers 
+var swiper = new Swiper(".citiesSwiper", { //swiper for cities card
+    slidesPerView: "auto",
+    spaceBetween: 35,
+    speed: 500,
+    grabCursor: true,
+    navigation: {
+        nextEl: '#cities-right',
+        prevEl: '#cities-left',
+    },
+    autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+    },
+});
+var swiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
+    slidesPerView: "auto",
+    spaceBetween: 35,
+    speed: 1000,
+    grabCursor: true,
+    navigation: {
+        nextEl: '#testimonials-right',
+        prevEl: '#testimonials-left',
+    },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        hide: true,
+    },
+    autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        375: {
+            spaceBetween: 10,
+        },
+        425: {
+            spaceBetween: 20,
+        },
+        992: {
+            spaceBetween: 20,
+        },
+        1200: {
+            spaceBetween: 35,
+        }
+    },
+});
