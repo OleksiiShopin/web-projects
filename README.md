@@ -1,6 +1,6 @@
 # web-projects
 
-You can see my portfolio website [here](https://oleksii-shopin.netify.app)
+You can see my portfolio website [here](https://oleksii-shopin.netlify.app/)
 <br>
 
 ## Features of portfolio
@@ -10,9 +10,9 @@ You can see my portfolio website [here](https://oleksii-shopin.netify.app)
 ⚡️ Styled with Bootstrap v4.3 + Custom SCSS\
 ⚡️ Fully Responsive\
 ⚡️ Valid HTML5 & CSS3\
-⚡️ Optimized with Parcel\
+⚡️ Optimized with Parcel
 
 ## Cases
 
-🔥 Case 1: [DreamTravel](https://oleksiishopin.github.io/web-projects/projects/DreamTravel)
+🔥 Case 1: [DreamTravel](https://oleksiishopin.github.io/web-projects/projects/DreamTravel)\
 🔥 Case 2: [Logoipsum](https://oleksiishopin.github.io/web-projects/projects/Logoipsum)
