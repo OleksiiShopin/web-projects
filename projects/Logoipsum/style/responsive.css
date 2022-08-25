@@ -1,0 +1,284 @@
+@media (min-width: 992px) {
+    .menu-button {
+        display: none;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .container {
+        max-width: 940px;
+    }
+
+    .hero {
+        max-width: 40%;
+    }
+
+    .hero img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        max-width: 730px;
+    }
+
+    .header {
+        padding: 30px 0 39px;
+    }
+
+    .about .title {
+        font-size: 4.5em;
+        line-height: 1;
+    }
+
+    .about .text {
+        font-size: 1.2em;
+    }
+
+    .hero-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .button {
+        width: 200px;
+        height: 55px;
+        font-size: 1em;
+    }
+
+    .button-transparent {
+        margin-left: 0;
+    }
+
+    .subscribe {
+        justify-content: start;
+        gap: 10px;
+    }
+
+    .subscribe__content {
+        width: 43%;
+    }
+
+    .subscribe__img {
+        width: 50%;
+    }
+
+    .subscribe__img img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .subscribe-title {
+        font-size: 3em;
+    }
+
+    .subscribe__content form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .subscribe .input {
+        width: 100%;
+    }
+
+    .subscribe__button {
+        width: 100%;
+        height: 60px;
+    }
+
+    .plan .title {
+        font-size: 3.5em;
+        margin-bottom: 100px;
+    }
+
+    .plan-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 550px
+    }
+
+    .header {
+        padding: 25px 0 34px;
+    }
+
+    .about .title {
+        font-size: 4em;
+        line-height: 1;
+    }
+
+    .about .text {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    .hero-buttons {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button {
+        width: 100%;
+        height: 60px;
+        font-size: 1em;
+    }
+
+    .subscribe {
+        position: relative;
+    }
+
+    .subscribe__img {
+        position: absolute;
+        right: -20px;
+    }
+
+    .subscribe__content {
+        width: 50%;
+    }
+
+    .footer nav ul {
+        display: flex;
+        gap: 15px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .footer .nav-li {
+        display: block;
+    }
+
+    .footer .nav-li {
+        margin: 0;
+    }
+
+    .footer {
+        padding: 45px 0;
+    }
+
+}
+
+@media (max-width: 599px) {
+    .container {
+        max-width: 400px;
+    }
+
+    .about {
+        position: relative;
+    }
+
+    .hero {
+        position: absolute;
+        right: -85%;
+        z-index: -1;
+    }
+
+    .hero img {
+        filter: blur(5px);
+    }
+
+    .subscribe__content {
+        width: 100%;
+    }
+
+    .subscribe__img {
+        z-index: -1;
+    }
+
+    .subscribe__img img {
+        filter: blur(5px);
+    }
+
+    section.plan {
+        margin-bottom: 90px;
+    }
+
+    .plan .title {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .footer nav ul {
+        width: 150px;
+        gap: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 424px) {
+    .container {
+        max-width: 350px
+    }
+
+    .header {
+        margin-bottom: 90px;
+    }
+
+    .about .title {
+        font-size: 3.8em;
+    }
+
+    .hero {
+        right: -100%;
+    }
+
+    .hero img {
+        width: 100%;
+        height: 100%;
+        filter: blur(10px);
+    }
+
+    .plan .title {
+        font-size: 3.2em;
+    }
+
+    .footer nav {
+        display: none;
+    }
+}
+
+@media (max-width: 374px) {
+    .container {
+        max-width: 300px;
+    }
+
+    img[alt="Logo"] {
+        width: 180px;
+        height: auto;
+    }
+
+    .about .title {
+        font-size: 3.3em;
+    }
+
+    .about .text {
+        font-size: 1em;
+        color: #000;
+    }
+
+    .subscribe-title {
+        font-size: 2.8em;
+    }
+
+    .plan .title {
+        font-size: 2.8em;
+    }
+
+    .plan .item {
+        width: 280px;
+    }
+
+    .plan .button-item {
+        width: 240px;
+    }
+}

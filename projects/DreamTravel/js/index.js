@@ -253,7 +253,7 @@ const citySwiper = new Swiper(".citiesSwiper", { //swiper for cities card
         disableOnInteraction: false,
     },
 });
-cosnt testimonialSwiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
+const testimonialSwiper = new Swiper(".testimonialsSwiper", { //swiper for testimonials card
     slidesPerView: "auto",
     spaceBetween: 35,
     speed: 1000,

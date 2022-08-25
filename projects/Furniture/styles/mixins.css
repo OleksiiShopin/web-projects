@@ -1,0 +1,220 @@
+.nested-list {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 0 3px;
+    box-shadow: 0px 2px 6px rgba(133, 149, 156, 0.2);
+    position: absolute;
+    z-index: 10;
+    flex-direction: column;
+    width: 181px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-list__item {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: var(--logo-width);
+}
+
+.logo__title {
+    font-size: 36px;
+    line-height: 45px;
+}
+
+.logo__title::first-letter {
+    color: var(--colorGreen);
+}
+
+.button {
+    padding: 15px 46px;
+    background: var(--colorGreen);
+    border: 1px solid transparent;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--colorBlack);
+}
+
+.title-h1 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 64px;
+    margin-bottom: 50px;
+}
+
+.title-h2 {
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.title-h2::before {
+    content: "";
+    width: 20px;
+    height: 50px;
+    background-color: var(--colorGreen);
+    position: absolute;
+    top: 2px;
+    left: -3px;
+    z-index: -1;
+}
+
+.title-h3 {
+    font-size: 36px;
+    line-height: 45px;
+}
+
+.title-h4 {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.control__button {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: 55% 50%;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.control__button:hover {
+    background-color: var(--colorGreen);
+}
+
+.control__button-left {
+    transform: rotate(180deg);
+}
+
+.sale-cost {
+    display: none;
+}
+
+.sales-span {
+    color: var(--colorRed);
+}
+
+.new__card::before {
+    content: "Новинка";
+    display: inline-block;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 125%;
+    color: var(--color-white);
+    background-color: var(--colorBlack);
+    padding: 5px 15px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 119px;
+    height: 33px;
+    box-sizing: border-box;
+}
+
+.sale__card::before {
+    content: "Хіт продаж";
+    display: inline-block;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 125%;
+    color: var(--color-white);
+    background-color: var(--colorBlack);
+    padding: 5px 15px;
+    position: absolute;
+    width: 145px;
+    height: 33px;
+    left: 0;
+    top: 10px;
+    box-sizing: border-box;
+}
+
+.action_card::after {
+    content: "Акція";
+    display: inline-block;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 125%;
+    color: var(--color-white);
+    background-color: var(--colorRed);
+    padding: 5px 15px;
+    position: absolute;
+    width: 84px;
+    height: 33px;
+    left: 0;
+    top: 48px;
+    box-sizing: border-box;
+}
+
+.action_card .furniture__card__description__cost {
+    color: var(--colorRed)
+}
+
+.action_card .sale-cost {
+    display: inline;
+    font-size: 18px;
+    color: var(--colorGray);
+    text-decoration: line-through;
+}
+
+.content {
+    position: relative;
+    height: 675px;
+    width: 100%;
+}
+
+.up-button {
+    display: none;
+    position: fixed;
+    left: 36px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: var(--colorGreen);
+    background-image: url('../assent/arrow-up.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color .3s, border .3s;
+}
+
+.up-button:hover {
+    background-color: var(--colorBlack);
+    border: 1px solid var(--colorGreen);
+}
+
+.up-button-visible {
+    display: block;
+}
