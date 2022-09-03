@@ -72,10 +72,6 @@ const promoSwiperText = new Swiper(".promo-swiper-text", {
   spaceBetween: 0,
   effect: "fade",
   simulateTouch: false,
-  // navigation: {
-  //   nextEl: "#promo-button-right",
-  //   prevEl: "#promo-button-left",
-  // },
 });
 
 const promoSwiperImg = new Swiper(".promo-swiper-img", {
@@ -112,4 +108,12 @@ const advantageSwiper = new Swiper(".advantagesSwiper", {
     nextEl: "#advantage-button-right",
     prevEl: "#advantage-button-left",
   },
+  breakpoint: {
+    1900: {
+      spaceBetween: 30,
+    },
+    1400: {
+      spaceBetween: 25,
+    }
+  }
 });

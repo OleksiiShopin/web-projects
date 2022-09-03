@@ -1,0 +1,147 @@
+@media (max-width: 1900px) {
+
+    body,
+    a,
+    button {
+        font-size: 16px;
+        line-height: 125%;
+    }
+
+    .header {
+        font-size: 14px;
+    }
+
+    .header a,
+    .header button {
+        font-size: 15px;
+    }
+
+    .title-h1 {
+        font-size: 56px;
+        line-height: 100%;
+    }
+
+    .title-h2 {
+        font-size: 39px;
+        line-height: 125%;
+    }
+
+    .title-h3 {
+        font-size: 27px;
+        line-height: 125%;
+    }
+
+    .title-h4 {
+        font-size: 18px;
+        line-height: 125%;
+    }
+
+    .logo__title {
+        font-size: 30px;
+        line-height: 125%;
+    }
+
+    .assortment__logo {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .assortment__logo__img {
+        width: 90px;
+    }
+
+    .nav-list {
+        gap: 10px;
+    }
+
+    .nested-list {
+        width: 120%;
+    }
+
+    .promo-slider__img {
+        object-fit: cover;
+    }
+
+    .assortment__nested-list__item a {
+        font-size: 14px;
+    }
+
+    .advantages__wrapper {
+        margin: 0;
+    }
+
+    .advantage__box__card__img {
+        object-fit: cover;
+    }
+
+    .card__description__title::before {
+        bottom: 0;
+    }
+
+    .card__description__text {
+        margin-top: 10px;
+    }
+
+    .category__list {
+        gap: 130px;
+        width: auto;
+    }
+
+    .about-us__content__description {
+        padding: 50px 30px;
+        width: 50%;
+        height: auto;
+    }
+
+    .about-us__content__description::before {
+        height: 100%;
+    }
+
+    .about-us__content__img {
+        width: 75%;
+    }
+
+    .content {
+        height: 500px;
+    }
+
+    .questions__content__img {
+        height: 100%;
+    }
+
+    .question__card {
+        padding: 50px 30px;
+    }
+
+    .footer__img {
+        object-fit: cover;
+    }
+
+    .footer__informations {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .footer__nav__list {
+        width: 100%;
+        height: 160px;
+    }
+
+    .footer__informations__contacts__list {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .footer-media {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer__license {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

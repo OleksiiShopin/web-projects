@@ -1,0 +1,14 @@
+:root {
+    --colorGreen: #44c697;
+    --colorBlack: #1e2e36;
+    --svg-color: var(--colorBlack);
+    --colorGray: #bcbdbb;
+    --colorRed: #ff1b1b;
+    --greyscale500: #a0aec0;
+    --color-white: #fff;
+    --logo-width: 360px;
+    --m-bottom-section: 100px;
+    --content-max-width: 95.6%;
+    --arrow-active: url('../assent/arrow-right-active.svg');
+    --arrow-disable: url('../assent/arrow-right-disable.svg');
+}
