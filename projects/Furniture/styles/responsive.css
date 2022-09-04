@@ -1,4 +1,4 @@
-@media (max-width: 1900px) {
+@media (max-width: 1899px) {
 
     body,
     a,
@@ -143,5 +143,56 @@
     .footer__license {
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+@media (max-width: 1399px) {
+
+    .assortment__logo .logo__title {
+        display: none;
+    }
+
+    .assortment__logo__img {
+        position: absolute;
+        left: calc(50% - 45px);
+    }
+
+    .header__button {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+    .promo-slider__card {
+        padding: 90px 0;
+        height: auto;
+        width: 430px;
+    }
+    .description__title  {
+        font-size: 38px;
+    }
+    .category__list  {
+        gap: 100px;
+    }
+    .category__furnitures__card {
+        width: 500px;
+        height: auto;
+    }
+    .furniture__card__description {
+        height: auto;
+    }
+    .about-us__content__description__text {
+        font-size: 14px;
+    }
+    .content {
+        height: auto;
+    }
+    .questions__content__img {
+        width: 60%;
+        object-fit: cover;
+    }
+    .footer__wrapper {
+        width: 50%;
+    }
+    .footer__img {
+        width: 50%;
     }
 }
