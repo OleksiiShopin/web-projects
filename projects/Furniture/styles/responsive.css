@@ -161,38 +161,269 @@
         white-space: nowrap;
         font-size: 14px;
     }
+
     .promo-slider__card {
         padding: 90px 0;
         height: auto;
         width: 430px;
     }
-    .description__title  {
+
+    .description__title {
         font-size: 38px;
     }
-    .category__list  {
+
+    .category__list {
         gap: 100px;
     }
+
     .category__furnitures__card {
         width: 500px;
         height: auto;
     }
+
     .furniture__card__description {
         height: auto;
     }
+
     .about-us__content__description__text {
         font-size: 14px;
     }
+
     .content {
         height: auto;
     }
+
     .questions__content__img {
         width: 60%;
         object-fit: cover;
     }
+
     .footer__wrapper {
         width: 50%;
     }
+
     .footer__img {
         width: 50%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .header {
+        display: none;
+    }
+
+    .header-small {
+        display: block;
+    }
+
+    .nav-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .assortment__logo {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .assortment__logo__img {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .assortment__logo .logo__title {
+        display: inline-block;
+    }
+
+    .assortment {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: start;
+        background-color: var(--colorGreen);
+        color: var(--color-white);
+        gap: 20px;
+        height: 77px;
+        border-radius: 50px;
+        overflow: hidden;
+        transition: all 0.5s;
+    }
+
+    .active-menu {
+        height: auto;
+        border-radius: 0;
+    }
+
+    .menu-block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .menu_icon svg {
+        overflow: visible;
+        transition: .5s;
+        cursor: pointer;
+    }
+
+    .active-menu #rectangle1 {
+        transform: translateY(8.7px) rotate(45deg);
+        transition: .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    .active-menu #rectangle2 {
+        transform: translateX(34px);
+        opacity: 0;
+        transition: .5s;
+        transform-origin: center;
+    }
+
+    .active-menu #rectangle3 {
+        transform: translateY(-8.7px) rotate(-45deg);
+        transition: .5s;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    .nav-site-list {
+        gap: 15px;
+    }
+
+    .nav-site-list a {
+        color: var(--color-white);
+    }
+
+    .nav-site-list__item::before {
+        background-color: var(--colorBlack);
+    }
+
+    .nav-list-small {
+        border-top: 1px solid var(--color-white);
+        padding-top: 10px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        width: 100%;
+    }
+
+    .phone-number {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .phone-number svg {
+        transition: color .3s;
+    }
+
+    .phone-number:hover svg {
+        color: var(--colorBlack);
+    }
+
+    .social-media__items__box {
+        color: var(--color-white);
+    }
+
+    .social-media__items__box:hover {
+        background-color: var(--color-white);
+    }
+
+    .phone-number__item {
+        transition: color .3s;
+    }
+
+    .phone-number__item__link {
+        color: var(--color-white);
+        transition: .3s;
+    }
+
+    .phone-number__item:hover .phone-number__item__link {
+        color: var(--colorBlack);
+    }
+
+    .nav-list-small {
+        width: 100%;
+    }
+
+    .assortment__title {
+        font-size: 20px;
+        text-transform: uppercase;
+        color: var(--colorBlack);
+    }
+
+    .assortment-nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        display: flex;
+        width: 100%;
+    }
+
+    .assortment-nav-list__item {
+        flex-direction: column;
+        border-bottom: 1px solid var(--color-white);
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .assortment-nav-list__item:hover {
+        color: var(--colorBlack);
+    }
+
+    .navigation-list {
+        display: flex;
+        flex-direction: column;
+        padding: 5px 0;
+        gap: 5px;
+    }
+
+    .assortment__nested-list__item a {
+        color: var(--greyscale);
+        text-transform: capitalize;
+        font-size: 16px;
+        transition: color .5s;
+    }
+
+    .assortment__nested-list__item:hover a {
+        color: var(--colorBlack);
+    }
+
+    .title-h2::before {
+        height: 43px;
+    }
+
+    .category__list {
+        gap: 60px;
+    }
+
+    .category__furnitures__card {
+        width: 420px;
+    }
+    .about-us__container {
+        height: 460px;
+    }
+
+    .about-us__content__description {
+        padding: 30px;
+    }
+    .about-us__content__img {
+        width: 100%;
+        height: 460px;
+    }
+    .question_card_description {
+        max-width: 360px;
+    }
+    .footer__wrapper {
+        padding: 30px;
     }
 }

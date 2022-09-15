@@ -108,12 +108,27 @@ const advantageSwiper = new Swiper(".advantagesSwiper", {
     nextEl: "#advantage-button-right",
     prevEl: "#advantage-button-left",
   },
-  breakpoint: {
+  breakpoints: {
     1900: {
       spaceBetween: 30,
     },
     1400: {
+      slidesPerView: 3,
       spaceBetween: 25,
+    },
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 20,
     }
   }
 });
+
+// menu script
+const menuButton = document.querySelector('.js-menu-button');
+
+function activeMenu () {
+    const menu = document.querySelector('.js-menu');
+    menu.classList.toggle("active-menu");
+}
+
+menuButton.addEventListener('click', activeMenu);
