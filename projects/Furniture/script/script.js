@@ -120,7 +120,7 @@ const advantageSwiper = new Swiper(".advantagesSwiper", {
       slidesPerView: 2,
       spaceBetween: 20,
     },
-    768: {
+    320: {
       slidesPerView: 1,
     }
   }

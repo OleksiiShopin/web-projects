@@ -483,3 +483,71 @@
         width: 40%;
     }
 }
+
+@media (max-width: 767px) {
+    .assortment__logo .logo__title {
+        display: none;
+    }
+
+    .header__button {
+        padding: 15px 30px;
+    }
+
+    .promo-slider__card {
+        padding: 40px 0;
+        width: 350px;
+    }
+
+    .title-h1 {
+        font-size: 45px;
+        margin-bottom: 40px;
+    }
+
+    .description__title {
+        font-size: 35px;
+    }
+
+    .description__text {
+        font-size: 30px;
+    }
+
+    .about-us__content__description {
+        width: 100%;
+    }
+
+    .about-us__content__img {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translateY(0);
+        width: 100%;
+    }
+
+    .questions {
+        margin-bottom: 80px;
+    }
+
+    .question__card {
+        width: 100%;
+        align-items: center;
+    }
+
+    .questions__content__img {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .question_card_description {
+        max-width: 100%;
+    }
+
+    .footer__img {
+        display: none;
+    }
+
+    .footer__wrapper {
+        width: 100%;
+    }
+}
