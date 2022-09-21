@@ -551,3 +551,154 @@
         width: 100%;
     }
 }
+
+@media (max-width: 599px) {
+    .header__button {
+        display: none;
+    }
+
+    .header__button-small {
+        display: block;
+        color: var(--color-white);
+        padding: 7px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+
+    .button-icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    .phone-number {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .navigation-mobile {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    nav.navigation-mobile {
+        border-bottom: 1px solid var(--color-white);
+        width: 100%;
+    }
+
+    .navigation-small {
+        display: none;
+    }
+
+    .assortment {
+        padding: 20px 0;
+        height: 63px;
+    }
+
+    .active-menu {
+        height: auto;
+    }
+
+    .nav-site-list {
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+    }
+
+    .category__furnitures {
+        gap: 30px;
+    }
+
+    .category__furnitures__card {
+        width: 380px;
+    }
+
+    .footer__informations__contacts__list {
+        flex-wrap: wrap;
+    }
+
+    .informations__contacts__phone-numbers {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .up-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 424px) {
+    .title-h2 {
+        font-size: 36px;
+    }
+
+    .title-h3 {
+        font-size: 24px;
+    }
+
+    .card__description__text {
+        font-size: 14px;
+    }
+
+    .category__furnitures__card {
+        width: 340px;
+    }
+
+    .sale__card::before,
+    .action_card::after,
+    .new__card::before {
+        font-size: 14px;
+        width: auto;
+        height: auto;
+    }
+
+    .footer-media {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .footer__nav__list {
+        gap: 15px;
+    }
+
+    .footer__nav__list__item {
+        width: auto;
+    }
+}
+
+@media (max-width: 374px) {
+    .social-media {
+        flex-direction: column;
+    }
+    .promo-slider__card {
+        width: 300px;
+    }
+    .title-h2 {
+        font-size: 34px;
+    }
+    .category__furnitures__card {
+        width: 300px;
+    }
+    .title-h4,
+    .action_card .sale-cost {
+        font-size: 14px;
+    }
+    .footer__logo svg {
+        width: 80px;
+        height: auto;
+    }
+    .logo__title {
+        font-size: 25px;
+    }
+    .footer__nav__list {
+        align-content: space-around;
+    }
+    .informations__contacts__phone-numbers {
+        flex-direction: column;
+    }
+    .license__item {
+        font-size: 12px;
+    }
+    
+}
