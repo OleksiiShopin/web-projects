@@ -94,7 +94,8 @@ const promoSwiperImg = new Swiper(".promo-swiper-img", {
   },
 });
 
-function currentIndex() { // change number of counter promo slider
+function currentIndex() {
+  // change number of counter promo slider
   const counter = document.querySelector(".counter__current-count");
   counter.textContent = `0${promoSwiperText.activeIndex + 1}`;
 }
@@ -122,16 +123,39 @@ const advantageSwiper = new Swiper(".advantagesSwiper", {
     },
     320: {
       slidesPerView: 1,
-    }
-  }
+    },
+  },
 });
 
 // menu script
-const menuButton = document.querySelector('.js-menu-button');
+const menuButton = document.querySelector(".js-menu-button");
 
-function activeMenu () {
-    const menu = document.querySelector('.js-menu');
-    menu.classList.toggle("active-menu");
+function activeMenu() {
+  const menu = document.querySelector(".js-menu");
+  menu.classList.toggle("active-menu");
 }
 
-menuButton.addEventListener('click', activeMenu);
+menuButton.addEventListener("click", activeMenu);
+
+// modal window
+const modalForm = document.getElementById("recall-form");
+const reCallButtons = document.querySelectorAll(".header__button");
+const closeButton = document.getElementById("recall-form-close");
+
+reCallButtons.forEach((el) => {
+  el.addEventListener("click", displayModalForm);
+});
+
+function displayModalForm() {
+  modalForm.style.display = "block";
+}
+
+closeButton.onclick = function () {
+  modalForm.style.display = "none";
+};
+
+window.onclick = function (event) {
+  if(event.target == modalForm) {
+    modalForm.style.display = "none";
+  }
+};
