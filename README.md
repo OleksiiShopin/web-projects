@@ -14,5 +14,7 @@ You can see my portfolio website [here](https://oleksii-shopin.netlify.app/)
 
 ## Cases
 
-🔥 Case 1: [DreamTravel](https://oleksiishopin.github.io/web-projects/projects/DreamTravel)\
-🔥 Case 2: [Logoipsum](https://oleksiishopin.github.io/web-projects/projects/Logoipsum)
+🔥 Case 1: [DreamTravel](https://oleksii-shopin.netlify.app/up_/projects/dreamtravel/)\
+🔥 Case 2: [Logoipsum](https://oleksii-shopin.netlify.app/up_/projects/logoipsum/)
+🔥 Case 3: [Simple Task App](https://oleksii-shopin.netlify.app/up_/projects/taskapp/)
+🔥 Case 4: [Furniture](https://oleksii-shopin.netlify.app/up_/projects/furniture/)
